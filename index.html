@@ -35,6 +35,10 @@
             class="levels__second-level"
             data-hystmodal="#myModalTwo"
           ></div>
+          <div
+            class="levels__third-level"
+            data-hystmodal="#myModalThree"
+          ></div>
         </div>
       </div>
     </section>
@@ -63,15 +67,30 @@
               компьютера, чтобы выполнить определенные задачи?
             </h1>
             <div class="quiz__answers">
-              <div class="answer first-incorrect" id="doc">Документ</div>
               <div
-                class="answer correct"
+                class="answers first-answers first-incorrect"
+                id="doc"
+              >
+                Документ
+              </div>
+              <div
+                class="answers first-answers correct"
                 id="firstCorrect"
               >
                 Программа
               </div>
-              <div class="answer first-incorrect" id="img">Изображение</div>
-              <div class="answer first-incorrect" id="audio">Аудиофайл</div>
+              <div
+                class="answers first-answers first-incorrect"
+                id="img"
+              >
+                Изображение
+              </div>
+              <div
+                class="answers first-answers first-incorrect"
+                id="audio"
+              >
+                Аудиофайл
+              </div>
             </div>
             <div
               id="firstResult"
@@ -100,19 +119,35 @@
           </button>
           <div class="quiz">
             <h1 class="quiz__question">
-              2. Что это за объект, который содержит набор инструкций для
-              компьютера, чтобы выполнить определенные задачи?
+              2. Как называется набор команд, который помогает компьютеру
+              выполнять задачи, такие как обработка текста или создание
+              изображений?
             </h1>
             <div class="quiz__answers">
-              <div class="answer second-incorrect">Документ</div>
               <div
-                class="answer correct"
+                class="answers second-answers second-incorrect"
+                id="manual"
+              >
+                Инструкция
+              </div>
+              <div
+                class="answers second-answers correct"
                 id="secondCorrect"
               >
-                Программа
+                Программное обеспечение
               </div>
-              <div class="answer second-incorrect">Изображение</div>
-              <div class="answer second-incorrect">Аудиофайл</div>
+              <div
+                class="answers second-answers second-incorrect"
+                id="guide"
+              >
+                Руководство
+              </div>
+              <div
+                class="answers second-answers second-incorrect"
+                id="setRules"
+              >
+                Набор правил
+              </div>
             </div>
             <div
               id="secondResult"
@@ -122,6 +157,46 @@
         </div>
       </div>
     </div>
+    <div
+      class="hystmodal"
+      id="myModalThree"
+      aria-hidden="true"
+    >
+      <div class="hystmodal__wrap">
+        <div
+          class="hystmodal__window"
+          role="dialog"
+          aria-modal="true"
+        >
+          <button
+            data-hystclose
+            class="hystmodal__close"
+          >
+            Закрыть
+          </button>
+          <div class="quiz">
+            <h1 class="quiz__question">3. Перетащите элементы</h1>
+            <div class="quiz__blocks">
+              <div class="blocks__input-output">
+                <div class="blocks__input"></div>
+                <div class="blocks__output"></div>
+              </div>
+              <div class="blocks__devices">
+                <span class="device">Мышь</span>
+                <span class="device">Монитор</span>
+                <span class="device">Наушники</span>
+              </div>
+            </div>
+            <button class="check">Проверить</button>
+            <div
+              id="secondResult"
+              class="result"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- MODALS END -->
     <script src="js/hystmodal.min.js"></script>
     <script src="js/main.js"></script>
