@@ -4,71 +4,51 @@ const myModal = new HystModal({
 });
 
 const root = document.querySelector(":root");
-const quiz = document.querySelector(".quiz");
-const inc = document.querySelectorAll(".first-incorrect");
 const userScore = 0;
-
-const firstCorrectAnswer = document.querySelector("#firstCorrect");
-const doc = document.querySelector("#doc");
-const img = document.querySelector("#img");
-const audio = document.querySelector("#audio");
 const firstResult = document.querySelector("#firstResult");
-
-const secondCorrectAnswer = document.querySelector("#secondCorrect");
-const secondIncorrectAnswer = document.querySelectorAll(".second-incorrect");
 const secondResult = document.querySelector("#secondResult");
 
+const firstAnswers = document.querySelectorAll(".first-answers");
+const secondAnswers = document.querySelectorAll(".second-answers");
 
-firstCorrectAnswer.addEventListener(
-  "click",
-  () => {
-    firstResult.innerHTML = `Правильно!`;
-    root.style.setProperty("--first-color-correct", "#11ff74");
-    
-    doc.remove()
-    img.remove()
-    audio.remove()
-  }
-);
+// FIRST QUESTION
 
-doc.addEventListener('click', () => {
-  firstResult.innerHTML = `Неправильно! Правильный ответ "Программа"`;
+for (let item of firstAnswers) {
+  item.addEventListener("click", () => {
+    if (item.innerText === "Программа") {
+      firstResult.innerHTML = `Правильно!`;
+      root.style.setProperty("--first-color-correct", "#11ff74");
+      item.classList.add("user-choice");
+      for (let item2 of firstAnswers) {
+        if (!item2.classList.contains("user-choice")) item2.remove();
+      }
+    } else {
+      firstResult.innerHTML = `Неправильно! Правильный ответ "Программа"`;
+      item.classList.add("user-choice");
+      for (let item2 of firstAnswers) {
+        if (!item2.classList.contains("user-choice")) item2.remove();
+      }
+    }
+  });
+}
 
-  firstCorrectAnswer.remove()
-  img.remove()
-  audio.remove()
-})
-img.addEventListener('click', () => {
-  firstResult.innerHTML = `Неправильно! Правильный ответ "Программа"`;
+// SECOND QUESTION
 
-  firstCorrectAnswer.remove()
-  doc.remove()
-  audio.remove()
-})
-audio.addEventListener('click', () => {
-  firstResult.innerHTML = `Неправильно! Правильный ответ "Программа"`;
-  firstCorrectAnswer.remove()
-  img.remove()
-  doc.remove()
-})
-
-
-secondCorrectAnswer.addEventListener(
-  "click",
-  () => {
-    secondResult.innerHTML = `Правильно!`;
-    root.style.setProperty("--second-color-correct", "#11ff74");
-  },
-  { once: true }
-);
-
-for (let item of secondIncorrectAnswer) {
-  item.addEventListener(
-    "click",
-    () => {
-      secondResult.innerHTML = `Неправильно!`;
+for (let item of secondAnswers) {
+  item.addEventListener("click", () => {
+    if (item.innerText === "Программное обеспечение") {
+      secondResult.innerHTML = `Правильно!`;
       root.style.setProperty("--second-color-correct", "#11ff74");
-    },
-    { once: true }
-  );
+      item.classList.add("user-choice");
+      for (let item2 of secondAnswers) {
+        if (!item2.classList.contains("user-choice")) item2.remove();
+      }
+    } else {
+      secondResult.innerHTML = `Неправильно! Правильный ответ "Программное обеспечение"`;
+      item.classList.add("user-choice");
+      for (let item2 of secondAnswers) {
+        if (!item2.classList.contains("user-choice")) item2.remove();
+      }
+    }
+  });
 }
