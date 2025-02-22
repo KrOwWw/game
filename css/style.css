@@ -15,10 +15,6 @@
 }
 .body {
   font-family: sans-serif;
-  /* display: flex;
-  flex-direction: column;
-  align-items: center; */
-  width: 100vw;
 }
 .mini-game {
   display: flex;
@@ -26,28 +22,13 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  /* max-width: 894px; */
 }
 .mini-game__container {
-  /* display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; */
-  /* width: 100%; */
-  /* max-width: 894px; */
-  /* position: absolute; */
 }
 .mini-game__map {
   width: 100%;
-  /* min-height: 894px; */
 }
 .mini-game__levels {
-  /* position: absolute; */
-  /* background-color: #33333398; */
-  /* width: 100%; */
-  /* width: 894px; */
-  /* height: 894px; */
-  /* top: 0; */
 }
 .levels__first-level {
   position: relative;
@@ -155,7 +136,6 @@
   background-color: var(--color-hover);
 }
 .quiz__blocks {
-  /* background-color: #777; */
 }
 .blocks__input-output {
   display: flex;
