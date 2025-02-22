@@ -15,51 +15,63 @@
 }
 .body {
   font-family: sans-serif;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
+  width: 100vw;
 }
 .mini-game {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  /* max-width: 894px; */
 }
 .mini-game__container {
-  width: 100vw;
-  /* height: 894px; */
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; */
+  /* width: 100%; */
+  /* max-width: 894px; */
   /* position: absolute; */
 }
 .mini-game__map {
   width: 100%;
+  /* min-height: 894px; */
 }
 .mini-game__levels {
-  position: absolute;
+  /* position: absolute; */
   /* background-color: #33333398; */
-  width: 100%;
-  height: 100%;
-  top: 0;
+  /* width: 100%; */
+  /* width: 894px; */
+  /* height: 894px; */
+  /* top: 0; */
 }
 .levels__first-level {
-  position: absolute;
+  position: relative;
   background-color: aqua;
-  height: 9vw;
-  width: 9vw;
-  top: 9.5vw;
-  right: 28vw;
+  height: 90px;
+  width: 90px;
+  top: -816px;
+  right: -560px;
 }
 .levels__second-level {
-  position: absolute;
+  position: relative;
   background-color: red;
-  height: 9vw;
-  width: 9vw;
-  top: 19.5vw;
-  right: 49.5vw;
+  height: 90px;
+  width: 90px;
+  top: -823px;
+  right: -360px;
 }
 .levels__third-level {
-  position: absolute;
+  position: relative;
   background-color: green;
-  height: 9vw;
-  width: 9vw;
-  top: 22.5vw;
-  right: 86vw;
+  height: 90px;
+  width: 90px;
+  top: -884px;
+  left: 38px;
 }
 
 /* MODAL BEGIN */
@@ -183,3 +195,31 @@
 }
 
 /* MODAL END */
+
+/* MEDIA BEGIN */
+
+@media screen and (max-width: 895px) {
+  .levels__first-level {
+    position: absolute;
+    height: 10vw;
+    width: 10vw;
+    top: 9vw;
+    right: 27vw;
+  }
+  .levels__second-level {
+    position: absolute;
+    height: 10vw;
+    width: 10vw;
+    top: 19vw;
+    right: 48vw;
+  }
+  .levels__third-level {
+    position: absolute;
+    height: 10vw;
+    width: 10vw;
+    top: 22vw;
+    left: 4vw;
+  }
+}
+
+/* MEDIA END */
