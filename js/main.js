@@ -5,13 +5,11 @@ const myModal = new HystModal({
 
 const root = document.querySelector(":root");
 const userScore = 0;
-const firstResult = document.querySelector("#firstResult");
-const secondResult = document.querySelector("#secondResult");
-
-const firstAnswers = document.querySelectorAll(".first-answers");
-const secondAnswers = document.querySelectorAll(".second-answers");
 
 // FIRST QUESTION
+
+const firstResult = document.querySelector("#firstResult");
+const firstAnswers = document.querySelectorAll(".first-answers");
 
 for (let item of firstAnswers) {
   item.addEventListener("click", () => {
@@ -34,6 +32,9 @@ for (let item of firstAnswers) {
 
 // SECOND QUESTION
 
+const secondResult = document.querySelector("#secondResult");
+const secondAnswers = document.querySelectorAll(".second-answers");
+
 for (let item of secondAnswers) {
   item.addEventListener("click", () => {
     if (item.innerText === "Программное обеспечение") {
@@ -52,3 +53,57 @@ for (let item of secondAnswers) {
     }
   });
 }
+
+// THIRD QUESTION
+
+const items = document.querySelectorAll(".device");
+const columns = document.querySelectorAll(".column");
+const blocksInput = document.querySelector(".blocks__input");
+const blocksOutput = document.querySelector(".blocks__output");
+const mouse = document.querySelector(".mouse");
+const screen = document.querySelector(".screen");
+const headphones = document.querySelector(".headphones");
+const check = document.querySelector(".check");
+const thirdResult = document.querySelector("#thirdResult");
+let dragItem = null;
+
+items.forEach((item) => {
+  item.addEventListener("dragstart", dragStart);
+  item.addEventListener("dragend", dragEnd);
+});
+
+columns.forEach((column) => {
+  column.addEventListener("dragover", dragOver);
+  column.addEventListener("dragenter", dragEnter);
+  column.addEventListener("dragleave", dragLeave);
+  column.addEventListener("drop", dragDrop);
+});
+
+function dragStart() {
+  dragItem = this;
+}
+
+function dragEnd() {
+  dragItem = null;
+}
+
+function dragOver(e) {
+  e.preventDefault();
+}
+function dragEnter() {}
+function dragLeave() {}
+function dragDrop() {
+  this.append(dragItem);
+}
+
+check.addEventListener("click", () => {
+  if (
+    blocksInput.contains(mouse) &&
+    blocksOutput.contains(screen) &&
+    blocksOutput.contains(headphones)
+  ) {
+    thirdResult.innerHTML = `Правильно`;
+  } else {
+    thirdResult.innerHTML = `Неправильно`;
+  }
+});
