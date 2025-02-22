@@ -176,18 +176,45 @@
             <h1 class="quiz__question">3. Перетащите элементы</h1>
             <div class="quiz__blocks">
               <div class="blocks__input-output">
-                <div class="blocks__input box">Устройства ввода</div>
-                <div class="blocks__output box">Устройства вывода</div>
+                <div class="blocks__input column">Устройства ввода</div>
+                <div class="blocks__output column">Устройства вывода</div>
               </div>
               <div class="blocks__devices">
-                <div class="device">Мышь</div>
-                <div class="device">Монитор</div>
-                <div class="device">Наушники</div>
+                <div
+                  class="device mouse"
+                  draggable="true"
+                >
+                  <img
+                    class="device__img"
+                    src="./img/mouse.jpg"
+                    alt=""
+                  />
+                </div>
+                <div
+                  class="device screen"
+                  draggable="true"
+                >
+                  <img
+                    class="device__img"
+                    src="./img/screen.png"
+                    alt=""
+                  />
+                </div>
+                <div
+                  class="device headphones"
+                  draggable="true"
+                >
+                  <img
+                    class="device__img"
+                    src="./img/headphones.jpg"
+                    alt=""
+                  />
+                </div>
               </div>
             </div>
             <button class="check">Проверить</button>
             <div
-              id="secondResult"
+              id="thirdResult"
               class="result"
             ></div>
           </div>
