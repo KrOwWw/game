@@ -23,40 +23,43 @@
   align-items: center;
 }
 .mini-game__container {
-  width: 894px;
-  height: 894px;
+  width: 100vw;
+  /* height: 894px; */
   /* position: absolute; */
+}
+.mini-game__map {
+  width: 100%;
 }
 .mini-game__levels {
   position: absolute;
   /* background-color: #33333398; */
-  width: 894px;
-  height: 894px;
+  width: 100%;
+  height: 100%;
   top: 0;
 }
 .levels__first-level {
   position: absolute;
   background-color: aqua;
-  height: 80px;
-  width: 80px;
-  top: 82px;
-  right: 250px;
+  height: 9vw;
+  width: 9vw;
+  top: 9.5vw;
+  right: 28vw;
 }
 .levels__second-level {
   position: absolute;
   background-color: red;
-  height: 80px;
-  width: 80px;
-  top: 174px;
-  right: 442px;
+  height: 9vw;
+  width: 9vw;
+  top: 19.5vw;
+  right: 49.5vw;
 }
 .levels__third-level {
   position: absolute;
   background-color: green;
-  height: 80px;
-  width: 80px;
-  top: 200px;
-  right: 774px;
+  height: 9vw;
+  width: 9vw;
+  top: 22.5vw;
+  right: 86vw;
 }
 
 /* MODAL BEGIN */
@@ -148,10 +151,15 @@
 }
 .blocks__input,
 .blocks__output {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
   width: 45%;
   height: 50px;
   border: 1px solid #000;
   border-radius: 10px;
+  padding: 5px;
 }
 .blocks__output {
 }
@@ -164,6 +172,7 @@
   padding: 5px;
   border: 1px solid #000;
   border-radius: 10px;
+  cursor: pointer;
 }
 .check {
   margin-top: 15px;
