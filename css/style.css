@@ -148,12 +148,13 @@
   align-items: center;
   justify-content: start;
   width: 45%;
-  height: 50px;
+  gap: 35px;
   border: 1px solid #000;
   border-radius: 10px;
   padding: 5px;
 }
-.blocks__output {
+.blocks__input {
+  height: auto;
 }
 .blocks__devices {
   display: flex;
@@ -161,10 +162,15 @@
   padding-top: 15px;
 }
 .device {
+  display: flex;
+  align-items: center;
   padding: 5px;
   border: 1px solid #000;
   border-radius: 10px;
   cursor: pointer;
+}
+.device__img {
+  width: 100px;
 }
 .check {
   margin-top: 15px;
