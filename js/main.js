@@ -63,6 +63,10 @@ const blocksOutput = document.querySelector(".blocks__output");
 const mouse = document.querySelector(".mouse");
 const screen = document.querySelector(".screen");
 const headphones = document.querySelector(".headphones");
+const microphone = document.querySelector(".microphone");
+const scanner = document.querySelector(".scanner");
+const gamepad = document.querySelector(".gamepad");
+const printer = document.querySelector(".printer");
 const check = document.querySelector(".check");
 const thirdResult = document.querySelector("#thirdResult");
 
@@ -81,10 +85,16 @@ columns.forEach((column) => {
 
 function dragStart() {
   dragItem = this;
+  columns.forEach((column) => {
+    column.style.boxShadow = "0 0 10px #6f85ff";
+  });
 }
 
 function dragEnd() {
   dragItem = null;
+  columns.forEach((column) => {
+    column.style.boxShadow = "none";
+  });
 }
 
 function dragOver(e) {
@@ -97,6 +107,10 @@ function dragDrop() {
 check.addEventListener("click", () => {
   if (
     blocksInput.contains(mouse) &&
+    blocksInput.contains(microphone) &&
+    blocksInput.contains(scanner) &&
+    blocksInput.contains(gamepad) &&
+    blocksOutput.contains(printer) &&
     blocksOutput.contains(screen) &&
     blocksOutput.contains(headphones)
   ) {
