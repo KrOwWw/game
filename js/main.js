@@ -65,7 +65,9 @@ const screen = document.querySelector(".screen");
 const headphones = document.querySelector(".headphones");
 const check = document.querySelector(".check");
 const thirdResult = document.querySelector("#thirdResult");
+
 let dragItem = null;
+let isDragging = true;
 
 items.forEach((item) => {
   item.addEventListener("dragstart", dragStart);
@@ -74,8 +76,6 @@ items.forEach((item) => {
 
 columns.forEach((column) => {
   column.addEventListener("dragover", dragOver);
-  column.addEventListener("dragenter", dragEnter);
-  column.addEventListener("dragleave", dragLeave);
   column.addEventListener("drop", dragDrop);
 });
 
@@ -90,8 +90,6 @@ function dragEnd() {
 function dragOver(e) {
   e.preventDefault();
 }
-function dragEnter() {}
-function dragLeave() {}
 function dragDrop() {
   this.append(dragItem);
 }
