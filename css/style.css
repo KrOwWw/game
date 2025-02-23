@@ -135,7 +135,8 @@
 .second-incorrect:hover::before {
   background-color: var(--color-hover);
 }
-.quiz__blocks {
+.my__modal-three {
+  width: 60vw;
 }
 .blocks__input-output {
   display: flex;
@@ -144,32 +145,51 @@
 .blocks__input,
 .blocks__output {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: start;
+  /* flex-direction: column; */
+  flex-wrap: wrap;
   width: 45%;
   gap: 35px;
   border: 1px solid #000;
   border-radius: 10px;
   padding: 5px;
+  min-height: 50px;
+  margin-top: 20px;
+  transition: all 0.2s;
 }
 .blocks__input {
-  height: auto;
+  position: relative;
+}
+.blocks__input::before {
+  position: absolute;
+  content: "Устройства ввода";
+  top: -25px;
+}
+.blocks__output {
+  position: relative;
+}
+.blocks__output::before {
+  position: absolute;
+  content: "Устройства вывода";
+  top: -25px;
 }
 .blocks__devices {
   display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
   justify-content: space-around;
   padding-top: 15px;
 }
+
 .device {
   display: flex;
   align-items: center;
   padding: 5px;
-  border: 1px solid #000;
-  border-radius: 10px;
   cursor: pointer;
 }
 .device__img {
+  border: 1px solid #000;
+  border-radius: 10px;
+  padding: 5px;
   width: 100px;
 }
 .check {
@@ -208,4 +228,14 @@
   }
 }
 
+@media screen and (max-width: 1055px) {
+  .my__modal-three {
+    width: 80vw;
+  }
+}
+@media screen and (max-width: 467px) {
+  .my__modal-three {
+    width: 100vw;
+  }
+}
 /* MEDIA END */
