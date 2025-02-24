@@ -35,8 +35,8 @@
   background-color: aqua;
   height: 90px;
   width: 90px;
-  top: -816px;
-  right: -560px;
+  top: -241px;
+  left: 92px;
 }
 .modal__video {
   display: flex;
@@ -54,24 +54,32 @@
   background-color: red;
   height: 90px;
   width: 90px;
-  top: -823px;
-  right: -360px;
+  top: -379px;
+  right: -314px;
 }
 .levels__third-level {
   position: relative;
   background-color: green;
   height: 90px;
   width: 90px;
-  top: -884px;
-  left: 38px;
+  top: -675px;
+  left: 296px;
 }
 .levels__fourth-level {
   position: relative;
   background-color: #d400ff;
   height: 90px;
   width: 90px;
-  top: -511px;
-  left: 92px;
+  top: -974px;
+  left: 38px;
+}
+.levels__fifth-level {
+  position: relative;
+  background-color: #e5ff00;
+  height: 90px;
+  width: 90px;
+  top: -1090px;
+  left: 364px;
 }
 
 /* MODAL BEGIN */
@@ -164,9 +172,10 @@
 .blocks__input,
 .blocks__output {
   display: flex;
-  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
-  width: 45%;
+  width: 49%;
   gap: 35px;
   border: 1px solid #000;
   border-radius: 10px;
@@ -205,11 +214,43 @@
   padding: 5px;
   cursor: pointer;
 }
-.device__img {
+
+.blocks__peoples {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.device__img,
+.project,
+.people {
   border: 1px solid #000;
   border-radius: 10px;
   padding: 5px;
   width: 100px;
+}
+.people {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: auto;
+}
+.blocks__projects {
+  margin-top: 30px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.project {
+  text-align: center;
+}
+.people__img {
+  width: 150px;
+}
+.blocks__projects {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
 }
 .check {
   margin-top: 15px;
@@ -223,38 +264,56 @@
 
 /* MEDIA BEGIN */
 
+@media screen and (max-width: 1055px) {
+  .my__modal-three {
+    width: 80vw;
+  }
+}
 @media screen and (max-width: 895px) {
   .levels__first-level {
     position: absolute;
     height: 10vw;
     width: 10vw;
-    top: 9vw;
-    right: 27vw;
+    top: 73vw;
+    left: 10vw;
   }
   .levels__second-level {
     position: absolute;
     height: 10vw;
     width: 10vw;
-    top: 19vw;
-    right: 48vw;
+    top: 68vw;
+    right: 55vw;
   }
   .levels__third-level {
+    position: absolute;
+    height: 10vw;
+    width: 10vw;
+    top: 45vw;
+    left: 33vw;
+  }
+  .levels__fourth-level {
     position: absolute;
     height: 10vw;
     width: 10vw;
     top: 22vw;
     left: 4vw;
   }
-}
-
-@media screen and (max-width: 1055px) {
-  .my__modal-three {
-    width: 80vw;
+  .levels__fifth-level {
+    position: absolute;
+    height: 10vw;
+    width: 10vw;
+    top: 19vw;
+    left: 41vw;
   }
 }
 @media screen and (max-width: 467px) {
   .my__modal-three {
     width: 100vw;
+  }
+}
+@media screen and (max-width: 393px) {
+  .people__img {
+    width: 100px;
   }
 }
 /* MEDIA END */
