@@ -6,7 +6,16 @@ const myModal = new HystModal({
 const root = document.querySelector(":root");
 const userScore = 0;
 
-// FIRST QUESTION
+// VIDEO
+
+const pausedVideo = document.querySelector(".paused__video");
+const video = document.querySelector(".video");
+video.volume = 0.1;
+pausedVideo.addEventListener("click", () => {
+  video.pause();
+});
+
+// SECOND QUESTION
 
 const firstResult = document.querySelector("#firstResult");
 const firstAnswers = document.querySelectorAll(".first-answers");
@@ -30,7 +39,7 @@ for (let item of firstAnswers) {
   });
 }
 
-// SECOND QUESTION
+// THIRD QUESTION
 
 const secondResult = document.querySelector("#secondResult");
 const secondAnswers = document.querySelectorAll(".second-answers");
@@ -54,7 +63,7 @@ for (let item of secondAnswers) {
   });
 }
 
-// THIRD QUESTION
+// FOURTH QUESTION
 
 const items = document.querySelectorAll(".device");
 const columns = document.querySelectorAll(".column");
@@ -67,8 +76,9 @@ const microphone = document.querySelector(".microphone");
 const scanner = document.querySelector(".scanner");
 const gamepad = document.querySelector(".gamepad");
 const printer = document.querySelector(".printer");
-const check = document.querySelector(".check");
-const thirdResult = document.querySelector("#thirdResult");
+const acoustics = document.querySelector(".acoustics");
+const fourthCheck = document.querySelector(".fourth__check");
+const fourthResult = document.querySelector("#fourthResult");
 
 let dragItem = null;
 let isDragging = true;
@@ -104,7 +114,7 @@ function dragDrop() {
   this.append(dragItem);
 }
 
-check.addEventListener("click", () => {
+fourthCheck.addEventListener("click", () => {
   if (
     blocksInput.contains(mouse) &&
     blocksInput.contains(microphone) &&
@@ -112,10 +122,73 @@ check.addEventListener("click", () => {
     blocksInput.contains(gamepad) &&
     blocksOutput.contains(printer) &&
     blocksOutput.contains(screen) &&
+    blocksOutput.contains(acoustics) &&
     blocksOutput.contains(headphones)
   ) {
-    thirdResult.innerHTML = `Правильно`;
+    fourthResult.innerHTML = `Правильно`;
   } else {
-    thirdResult.innerHTML = `Неправильно`;
+    fourthResult.innerHTML = `Неправильно`;
+  }
+});
+
+// FIFTH QUESTION
+
+const projects = document.querySelectorAll(".project");
+const peoples = document.querySelectorAll(".people");
+const durov = document.querySelector(".durov");
+const gates = document.querySelector(".gates");
+const zuckerberg = document.querySelector(".zuckerberg");
+const jobs = document.querySelector(".jobs");
+const apple = document.querySelector(".apple");
+const facebook = document.querySelector(".facebook");
+const telegram = document.querySelector(".telegram");
+const microsoft = document.querySelector(".microsoft");
+const fifthCheck = document.querySelector(".fifth__check");
+const fifthResult = document.querySelector("#fifthResult");
+
+let dragItem2 = null;
+let isDragging2 = true;
+
+projects.forEach((project) => {
+  project.addEventListener("dragstart", dragStart);
+  project.addEventListener("dragend", dragEnd);
+});
+
+peoples.forEach((people) => {
+  people.addEventListener("dragover", dragOver);
+  people.addEventListener("drop", dragDrop);
+});
+
+function dragStart() {
+  dragItem2 = this;
+  peoples.forEach((people) => {
+    people.style.boxShadow = "0 0 10px #6f85ff";
+  });
+}
+
+function dragEnd() {
+  dragItem2 = null;
+  peoples.forEach((people) => {
+    people.style.boxShadow = "none";
+  });
+}
+
+function dragOver(e) {
+  e.preventDefault();
+}
+function dragDrop() {
+  this.append(dragItem2);
+}
+
+fifthCheck.addEventListener("click", () => {
+  if (
+    durov.contains(telegram) &&
+    gates.contains(microsoft) &&
+    zuckerberg.contains(facebook) &&
+    jobs.contains(apple)
+  ) {
+    fifthResult.innerHTML = `Правильно`;
+  } else {
+    fifthResult.innerHTML = `Неправильно`;
   }
 });
