@@ -48,6 +48,10 @@
             class="levels__fifth-level"
             data-hystmodal="#myModalFifth"
           ></div>
+          <div
+            class="levels__sixth-level"
+            data-hystmodal="#myModalSixth"
+          ></div>
           <!-- FINAL QUEST -->
           <div
             class="final-level"
@@ -347,6 +351,7 @@
                 <div class="people durov">
                   <img
                     class="people__img"
+                    draggable="false"
                     src="./img/fifth-level/durov.jpg"
                     alt=""
                   />
@@ -354,6 +359,7 @@
                 <div class="people gates">
                   <img
                     class="people__img"
+                    draggable="false"
                     src="./img/fifth-level/gates.jpg"
                     alt=""
                   />
@@ -361,6 +367,7 @@
                 <div class="people zuckerberg">
                   <img
                     class="people__img"
+                    draggable="false"
                     src="./img/fifth-level/zuckerberg.jpg"
                     alt=""
                   />
@@ -368,6 +375,7 @@
                 <div class="people jobs">
                   <img
                     class="people__img"
+                    draggable="false"
                     src="./img/fifth-level/jobs.jpg"
                     alt=""
                   />
@@ -403,6 +411,48 @@
             <button class="check fifth__check">Проверить</button>
             <div
               id="fifthResult"
+              class="result"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="hystmodal"
+      id="myModalSixth"
+      aria-hidden="true"
+    >
+      <div class="hystmodal__wrap">
+        <div
+          class="hystmodal__window my__modal-sixth"
+          role="dialog"
+          aria-modal="true"
+        >
+          <button
+            data-hystclose
+            class="hystmodal__close"
+          >
+            Закрыть
+          </button>
+          <div class="quiz">
+            <h1 class="quiz__question">5. Шифр цезаря</h1>
+            <div class="quiz__alphabet">
+              <span>Расшифруйте слово "eqfgs" (сдвиг вправо на 3)</span>
+              <img
+                class="quiz__img"
+                src="./img/sixth-level/aphabet.jpg"
+                alt="aphabet"
+              />
+              <input
+                name="user-input"
+                type="text"
+                class="quiz__input"
+              />
+              <br />
+              <button class="check sixth__check">Проверить</button>
+            </div>
+            <div
+              id="sixthResult"
               class="result"
             ></div>
           </div>
