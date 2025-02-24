@@ -38,6 +38,17 @@
   top: -816px;
   right: -560px;
 }
+.modal__video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  /* height: 500px; */
+}
+.video {
+  width: 100%;
+  height: 100%;
+}
 .levels__second-level {
   position: relative;
   background-color: red;
@@ -53,6 +64,14 @@
   width: 90px;
   top: -884px;
   left: 38px;
+}
+.levels__fourth-level {
+  position: relative;
+  background-color: #d400ff;
+  height: 90px;
+  width: 90px;
+  top: -511px;
+  left: 92px;
 }
 
 /* MODAL BEGIN */
