@@ -25,17 +25,24 @@
           alt="Картинка с игрой"
         />
         <div class="mini-game__levels">
+          <!-- видос -->
           <div
-            class="levels__first-level"
-            data-hystmodal="#myModal"
+          class="levels__first-level"
+          data-hystmodal="#myModal"
+          ></div>
+          <!-- два вопроса -->
+          <div
+          class="levels__second-level"
+          data-hystmodal="#myModalTwo"
           ></div>
           <div
-            class="levels__second-level"
-            data-hystmodal="#myModalTwo"
+          class="levels__third-level"
+          data-hystmodal="#myModalThree"
           ></div>
+          <!-- задания с переносом -->
           <div
-            class="levels__third-level"
-            data-hystmodal="#myModalThree"
+            class="levels__fourth-level"
+            data-hystmodal="#myModalFourth"
           ></div>
         </div>
       </div>
@@ -45,6 +52,32 @@
     <div
       class="hystmodal"
       id="myModal"
+      aria-hidden="true"
+    >
+      <div class="hystmodal__wrap">
+        <div
+          class="hystmodal__window"
+          role="dialog"
+          aria-modal="true"
+        >
+          <button
+            data-hystclose
+            class="hystmodal__close"
+          >
+            Закрыть
+          </button>
+          <div class="modal__video">
+            <video class="video" width="320" height="240" controls>
+              <source src="video/progr.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="hystmodal"
+      id="myModalTwo"
       aria-hidden="true"
     >
       <div class="hystmodal__wrap">
@@ -100,7 +133,7 @@
     </div>
     <div
       class="hystmodal"
-      id="myModalTwo"
+      id="myModalThree"
       aria-hidden="true"
     >
       <div class="hystmodal__wrap">
@@ -157,7 +190,7 @@
     </div>
     <div
       class="hystmodal"
-      id="myModalThree"
+      id="myModalFourth"
       aria-hidden="true"
     >
       <div class="hystmodal__wrap">
