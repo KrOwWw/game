@@ -48,6 +48,13 @@
             class="levels__fifth-level"
             data-hystmodal="#myModalFifth"
           ></div>
+          <!-- FINAL QUEST -->
+          <div
+            class="final-level"
+            data-hystmodal="#myModalFinal"
+          >
+            Финальное задание
+          </div>
         </div>
       </div>
     </section>
@@ -398,6 +405,69 @@
               id="fifthResult"
               class="result"
             ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="hystmodal"
+      id="myModalFinal"
+      aria-hidden="true"
+    >
+      <div class="hystmodal__wrap">
+        <div
+          class="hystmodal__window my__modal-final"
+          role="dialog"
+          aria-modal="true"
+        >
+          <button
+            data-hystclose
+            class="hystmodal__close"
+          >
+            Закрыть
+          </button>
+          <div class="quiz">
+            <h1 class="quiz__question">5. Соберите компьютер</h1>
+            <div class="no-components">У вас пока нет комплетующих</div>
+            <div class="shop">
+              <div class="shop__cpu block-components">
+                <div class="cpu components">
+                  <div class="cpu__title">Xeon e5 2690 v4</div>
+                  <div class="cpu__price">2 800</div>
+                  <button class="cpu__pay pay-xeon">Купить</button>
+                </div>
+                <div class="cpu components">
+                  <div class="cpu__title">Ryzen 7 8700F</div>
+                  <div class="cpu__price">19 000</div>
+                  <button class="cpu__pay pay-ryzen">Купить</button>
+                </div>
+                <div class="cpu components">
+                  <div class="cpu__title">
+                    Intel Core i7 14700, LGA 1700, OEM
+                  </div>
+                  <div class="cpu__price">40 000</div>
+                  <button class="cpu__pay pay-price">Купить</button>
+                </div>
+              </div>
+              <div class="shop__ram block-components">
+                <div class="ram components">
+                  <div class="ram__title">adata 8гб</div>
+                  <div class="ram__price">3 000</div>
+                  <button class="cpu__pay pay-adata">Купить</button>
+                </div>
+                <div class="ram components">
+                  <div class="cpu__title">kingston 16гб</div>
+                  <div class="cpu__price">5 000</div>
+                  <button class="cpu__pay pay-kingston">Купить</button>
+                </div>
+                <div class="ram components">
+                  <div class="cpu__title">samsung 32гб</div>
+                  <div class="cpu__price">7 000</div>
+                  <button class="cpu__pay pay-samsung">Купить</button>
+                </div>
+              </div>
+            </div>
+            <button class="open-shop">Магазин</button>
           </div>
         </div>
       </div>
