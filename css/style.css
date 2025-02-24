@@ -29,6 +29,7 @@
   width: 100%;
 }
 .mini-game__levels {
+  height: 0;
 }
 .levels__first-level {
   position: relative;
@@ -80,6 +81,41 @@
   width: 90px;
   top: -1090px;
   left: 364px;
+}
+.final-level {
+  position: relative;
+  background-color: #00ff40;
+  height: 90px;
+  width: 90px;
+  top: -598px;
+  left: 364px;
+}
+.my__modal-final {
+  width: 80vw;
+}
+.shop {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 30px;
+  border: #000 solid 1px;
+  border-radius: 15px;
+}
+.block-components {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.block-components::before {
+  position: absolute;
+  content: "Оперативная память";
+  top: -18px;
+}
+.components {
+  padding: 5px;
+  border: #000 solid 1px;
+  border-radius: 15px;
 }
 
 /* MODAL BEGIN */
