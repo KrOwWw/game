@@ -192,3 +192,17 @@ fifthCheck.addEventListener("click", () => {
     fifthResult.innerHTML = `Неправильно`;
   }
 });
+
+// SIXTH QUESTION
+
+const sixthCheck = document.querySelector(".sixth__check");
+const quizInput = document.querySelector(".quiz__input");
+const sixthResult = document.querySelector("#sixthResult");
+
+sixthCheck.addEventListener("click", () => {
+  if (quizInput.value === "coder") {
+    sixthResult.innerHTML = `Правильно`;
+  } else {
+    sixthResult.innerHTML = `Неправильно`;
+  }
+});
