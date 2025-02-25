@@ -206,3 +206,26 @@ sixthCheck.addEventListener("click", () => {
     sixthResult.innerHTML = `Неправильно`;
   }
 });
+
+// FINAL QUESTION
+
+const components = document.querySelectorAll(".pay");
+const openShop = document.querySelector(".open-shop");
+const shop = document.querySelector(".shop");
+let opened = false;
+
+components.forEach((component) => {
+  component.addEventListener("click", () => {
+    component.setAttribute("disabled", "");
+  });
+});
+
+openShop.addEventListener("click", () => {
+  if (opened === false) {
+    shop.classList.remove("hidden");
+    opened = true;
+  } else {
+    shop.classList.add("hidden");
+    opened = false;
+  }
+});
