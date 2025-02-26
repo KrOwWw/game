@@ -212,68 +212,157 @@ sixthCheck.addEventListener("click", () => {
 const buildingPc = document.querySelector(".quiz__building-pc");
 const noComponents = document.querySelector(".no-components");
 
-const boughtComponentCpu = document.querySelectorAll(".bought-component cpu");
-const boughtComponentRam = document.querySelectorAll(".bought-component ram");
-const boughtComponentRom = document.querySelectorAll(".bought-component rom");
-const boughtComponentGpu = document.querySelectorAll(".bought-component gpu");
-const boughtComponentPowerUnit = document.querySelectorAll(".bought-component power-unit");
-const components = document.querySelectorAll(".pay");
+const boughtComponentCpu = document.querySelector(".component__img-cpu");
+const boughtComponentRam = document.querySelector(".component__img-ram");
+const boughtComponentRom = document.querySelector(".component__img-hdd");
+const boughtComponentSsd = document.querySelector(".component__img-ssd");
+const boughtComponentNvme = document.querySelector(".component__img-nvme");
+const boughtComponentGpu = document.querySelector(".component__img-gpu");
+const boughtComponentPowerUnit = document.querySelector(
+  ".component__img-power-unit"
+);
+
+const componentCpuDown = document.querySelector(".cpu-down");
+const componentGpuDown = document.querySelector(".gpu-down");
+const componentRamDown = document.querySelector(".ram-down");
+const componentRomDown = document.querySelector(".rom-down");
+const componentPowerUnitDown = document.querySelector(".power-unit-down");
+const componentsUp = document.querySelectorAll(".component__img");
+
+let dragItem3 = null;
+let isDragging3 = true;
+
 const componentsCpu = document.querySelectorAll(".cpu__pay");
 const componentsRam = document.querySelectorAll(".ram__pay");
 const componentsRom = document.querySelectorAll(".rom__pay");
 const componentsGpu = document.querySelectorAll(".gpu__pay");
 const componentsPowerUnit = document.querySelectorAll(".power-unit__pay");
+
+const workPc = document.querySelector(".work");
+const noWorkPc = document.querySelector(".no-work");
+
 const openShop = document.querySelector(".open-shop");
+const startPc = document.querySelector(".start-pc");
 const shop = document.querySelector(".shop");
 let opened = false;
+
+componentCpuDown.addEventListener("dragover", dragOver);
+componentCpuDown.addEventListener("drop", dragDrop);
+componentGpuDown.addEventListener("dragover", dragOver);
+componentGpuDown.addEventListener("drop", dragDrop);
+componentRamDown.addEventListener("dragover", dragOver);
+componentRamDown.addEventListener("drop", dragDrop);
+componentRomDown.addEventListener("dragover", dragOver);
+componentRomDown.addEventListener("drop", dragDrop);
+componentPowerUnitDown.addEventListener("dragover", dragOver);
+componentPowerUnitDown.addEventListener("drop", dragDrop);
+
+componentsUp.forEach((componentUp) => {
+  componentUp.addEventListener("dragstart", dragStart);
+  componentUp.addEventListener("dragend", dragEnd);
+});
+
+function dragStart() {
+  dragItem3 = this;
+  peoples.forEach((people) => {
+    people.style.boxShadow = "0 0 10px #6f85ff";
+  });
+}
+
+function dragEnd() {
+  dragItem3 = null;
+  peoples.forEach((people) => {
+    people.style.boxShadow = "none";
+  });
+}
+
+function dragOver(e) {
+  e.preventDefault();
+}
+function dragDrop() {
+  this.append(dragItem3);
+}
 
 componentsCpu.forEach((componentCpu) => {
   componentCpu.addEventListener("click", () => {
     componentCpu.setAttribute("disabled", "");
-    componentCpu.innerHTML = `Куплено!`
-    noComponents.classList.add("hidden")
-    buildingPc.classList.remove("hidden")
+    componentCpu.innerHTML = `Куплено!`;
+    noComponents.classList.add("hidden");
+    buildingPc.classList.remove("hidden");
+    boughtComponentCpu.classList.remove("hidden");
 
     componentsCpu.forEach((componentCpu) => {
       componentCpu.setAttribute("disabled", "");
-    })
+    });
   });
 });
 componentsRom.forEach((componentRom) => {
   componentRom.addEventListener("click", () => {
     componentRom.setAttribute("disabled", "");
-    componentRom.innerHTML = `Куплено!`
+    componentRom.innerHTML = `Куплено!`;
+    noComponents.classList.add("hidden");
+    buildingPc.classList.remove("hidden");
+    if (componentRom.classList.contains("pay-hdd")) {
+      boughtComponentRom.classList.remove("hidden");
+    } else if (componentRom.classList.contains("pay-ssd")) {
+      boughtComponentSsd.classList.remove("hidden");
+    } else if (componentRom.classList.contains("pay-nvme")) {
+      boughtComponentNvme.classList.remove("hidden");
+    }
+
     componentsRom.forEach((componentRom) => {
       componentRom.setAttribute("disabled", "");
-    })
+    });
   });
 });
 componentsPowerUnit.forEach((componentPowerUnit) => {
   componentPowerUnit.addEventListener("click", () => {
     componentPowerUnit.setAttribute("disabled", "");
-    componentPowerUnit.innerHTML = `Куплено!`
+    componentPowerUnit.innerHTML = `Куплено!`;
+    buildingPc.classList.remove("hidden");
+    noComponents.classList.add("hidden");
+    boughtComponentPowerUnit.classList.remove("hidden");
     componentsPowerUnit.forEach((componentPowerUnit) => {
       componentPowerUnit.setAttribute("disabled", "");
-    })
+    });
   });
 });
 componentsGpu.forEach((componentGpu) => {
   componentGpu.addEventListener("click", () => {
     componentGpu.setAttribute("disabled", "");
-    componentGpu.innerHTML = `Куплено!`
+    componentGpu.innerHTML = `Куплено!`;
+    buildingPc.classList.remove("hidden");
+    noComponents.classList.add("hidden");
+    boughtComponentGpu.classList.remove("hidden");
     componentsGpu.forEach((componentGpu) => {
       componentGpu.setAttribute("disabled", "");
-    })
+    });
   });
 });
 componentsRam.forEach((componentRam) => {
   componentRam.addEventListener("click", () => {
     componentRam.setAttribute("disabled", "");
-    componentRam.innerHTML = `Куплено!`
+    componentRam.innerHTML = `Куплено!`;
+    buildingPc.classList.remove("hidden");
+    noComponents.classList.add("hidden");
+    boughtComponentRam.classList.remove("hidden");
     componentsRam.forEach((componentRam) => {
       componentRam.setAttribute("disabled", "");
-    })
+    });
   });
+});
+
+startPc.addEventListener("click", () => {
+  if (
+    componentCpuDown.contains(boughtComponentCpu) &&
+    componentGpuDown.contains(boughtComponentGpu) &&
+    componentRamDown.contains(boughtComponentRam) &&
+    componentRomDown.contains(boughtComponentRom) &&
+    componentPowerUnitDown.contains(boughtComponentPowerUnit)
+  ) {
+    workPc.classList.add("hidden");
+    noWorkPc.classList.remove("hidden");
+  }
 });
 
 openShop.addEventListener("click", () => {
@@ -285,5 +374,3 @@ openShop.addEventListener("click", () => {
     opened = false;
   }
 });
-
-
