@@ -214,7 +214,8 @@ const noComponents = document.querySelector(".no-components");
 
 const boughtComponentCpu = document.querySelector(".component__img-cpu");
 const boughtComponentRam = document.querySelector(".component__img-ram");
-const boughtComponentRom = document.querySelector(".component__img-hdd");
+// const boughtComponentRom = document.querySelector(".component__img-hdd");
+const boughtComponentHdd = document.querySelector(".component__img-hdd");
 const boughtComponentSsd = document.querySelector(".component__img-ssd");
 const boughtComponentNvme = document.querySelector(".component__img-nvme");
 const boughtComponentGpu = document.querySelector(".component__img-gpu");
@@ -303,7 +304,7 @@ componentsRom.forEach((componentRom) => {
     noComponents.classList.add("hidden");
     buildingPc.classList.remove("hidden");
     if (componentRom.classList.contains("pay-hdd")) {
-      boughtComponentRom.classList.remove("hidden");
+      boughtComponentHdd.classList.remove("hidden");
     } else if (componentRom.classList.contains("pay-ssd")) {
       boughtComponentSsd.classList.remove("hidden");
     } else if (componentRom.classList.contains("pay-nvme")) {
@@ -357,7 +358,7 @@ startPc.addEventListener("click", () => {
     componentCpuDown.contains(boughtComponentCpu) &&
     componentGpuDown.contains(boughtComponentGpu) &&
     componentRamDown.contains(boughtComponentRam) &&
-    componentRomDown.contains(boughtComponentRom) &&
+    componentRomDown.contains(boughtComponentHdd) &&
     componentPowerUnitDown.contains(boughtComponentPowerUnit)
   ) {
     workPc.classList.add("hidden");
