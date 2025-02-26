@@ -270,7 +270,6 @@
   padding-top: 20px;
   font-size: 24px;
 }
-
 .quiz__alphabet {
   display: flex;
   flex-direction: column;
@@ -289,9 +288,12 @@
   left: 559px;
 }
 .my__modal-final {
-  width: 80vw;
+  width: 50vw;
 }
-.shop {
+.shop,
+.quiz__building-pc,
+.build,
+.bought-components {
   display: flex;
   flex-direction: column;
   padding: 20px;
@@ -299,24 +301,34 @@
   border: #000 solid 1px;
   border-radius: 15px;
 }
+.quiz__building-pc {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.build,
+.bought-components{
+  width: 48%;
+}
 .hidden {
   display: none;
 }
 .shop__cpu,
 .shop__ram,
-.shop__motherboard,
 .shop__power-unit,
-.shop__gpu {
+.shop__gpu,
+.shop__rom {
   position: relative;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 15px;
 }
 .shop__cpu::before,
 .shop__ram::before,
-.shop__motherboard::before,
 .shop__power-unit::before,
-.shop__gpu::before {
+.shop__gpu::before,
+.shop__rom::before {
   position: absolute;
   content: "Процессоры";
   top: -18px;
@@ -324,25 +336,31 @@
 .shop__ram::before {
   content: "Оперативная память";
 }
-.shop__motherboard::before {
-  content: "Материнские платы";
-}
 .shop__power-unit::before {
   content: "Блоки питания";
 }
 .shop__gpu::before {
   content: "Видеокарты";
 }
+.shop__rom::before {
+  content: "Накопительные твердотельники";
+}
+.components{
+
+}
 .shop__info {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   gap: 15px;
   padding: 25px;
+  height: 250px;
   border: #000 solid 1px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
+
 .shop__img {
   width: 150px;
 }
@@ -432,6 +450,11 @@
     width: 10vw;
     top: 9vw;
     left: 63vw;
+  }
+}
+@media screen and (max-width: 640px) {
+  .my__modal-final {
+    width: 80vw;
   }
 }
 @media screen and (max-width: 467px) {
