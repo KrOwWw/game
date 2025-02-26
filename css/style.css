@@ -301,13 +301,20 @@
   border: #000 solid 1px;
   border-radius: 15px;
 }
+.build-pc {
+  display: flex;
+}
+.components-places {
+  width: 0;
+  height: 0;
+}
 .shop {
   overflow: scroll;
   height: 400px;
 }
 .quiz__building-pc {
   display: flex;
-  flex-direction: row;
+  flex-wrap: nowrap;
   justify-content: space-between;
 }
 .build,
@@ -328,51 +335,51 @@
   background-color: #ff0000;
   width: 31px;
   height: 31px;
-  top: 22px;
-  right: 227px;
+  top: 63px;
+  right: -80px;
 }
 .ram-down {
   position: relative;
   content: "";
-  background-color: #ffe600;
+  /* background-color: #ffe600; */
   width: 18px;
   height: 69px;
-  top: -30px;
-  right: 184px;
+  top: 16px;
+  right: -100px;
 }
 .gpu-down {
   position: relative;
   content: "";
   background-color: #1eff00;
-  width: 55px;
-  height: 11px;
-  top: -25px;
-  right: 256px;
+  width: 109px;
+  height: 63px;
+  top: 13px;
+  right: -22px;
 }
 .rom-down {
   position: relative;
   content: "";
   background-color: #0011ff;
   width: 67px;
-  height: 35px;
-  top: 1px;
-  right: 151px;
+  height: 65px;
+  top: -17px;
+  right: -137px;
 }
 .power-unit-down {
   position: relative;
   content: "";
   background-color: #00fff2;
   width: 67px;
-  height: 35px;
-  top: 17px;
-  right: 281px;
+  height: 42px;
+  top: -20px;
+  right: -23px;
 }
 .build {
   flex-direction: row;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  width: 80%;
+  /* width: 80%; */
 }
 .build__img {
   height: 275px;
@@ -420,7 +427,7 @@
   content: "Видеокарты";
 }
 .shop__rom::before {
-  content: "Накопительные твердотельники";
+  content: "Накопители";
 }
 .components {
 }
@@ -528,12 +535,28 @@
     left: 63vw;
   }
 }
+
+@media screen and (max-width: 750px) and (min-width: 641px) {
+  /* .cpu-down {
+    position: relative;
+    top: -241px;
+    right: 30px;
+  } */
+}
 @media screen and (max-width: 640px) {
   .my__modal-final {
     width: 100vw;
   }
+  .quiz__building-pc {
+    flex-direction: column;
+  }
   /* .build__img {
-    height: 150px;
+    height: 250px;
+  } */
+  /* .cpu-down {
+    position: relative;
+    top: -241px;
+    right: 30px;
   } */
 }
 @media screen and (max-width: 467px) {
