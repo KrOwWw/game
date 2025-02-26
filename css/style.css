@@ -288,7 +288,7 @@
   left: 559px;
 }
 .my__modal-final {
-  width: 50vw;
+  width: 80vw;
 }
 .shop,
 .quiz__building-pc,
@@ -301,14 +301,91 @@
   border: #000 solid 1px;
   border-radius: 15px;
 }
+.shop {
+  overflow: scroll;
+  height: 400px;
+}
 .quiz__building-pc {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 .build,
-.bought-components{
-  width: 48%;
+.bought-components {
+  height: 300px;
+  /* width: 48%; */
+}
+.cpu-down,
+.ram-down,
+.gpu-down,
+.rom-down,
+.power-unit-down {
+  display: flex;
+}
+.cpu-down {
+  position: relative;
+  content: "";
+  background-color: #ff0000;
+  width: 31px;
+  height: 31px;
+  top: 22px;
+  right: 227px;
+}
+.ram-down {
+  position: relative;
+  content: "";
+  background-color: #ffe600;
+  width: 18px;
+  height: 69px;
+  top: -30px;
+  right: 184px;
+}
+.gpu-down {
+  position: relative;
+  content: "";
+  background-color: #1eff00;
+  width: 55px;
+  height: 11px;
+  top: -25px;
+  right: 256px;
+}
+.rom-down {
+  position: relative;
+  content: "";
+  background-color: #0011ff;
+  width: 67px;
+  height: 35px;
+  top: 1px;
+  right: 151px;
+}
+.power-unit-down {
+  position: relative;
+  content: "";
+  background-color: #00fff2;
+  width: 67px;
+  height: 35px;
+  top: 17px;
+  right: 281px;
+}
+.build {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 80%;
+}
+.build__img {
+  height: 275px;
+}
+.build,
+.bought-components {
+  overflow: scroll;
+  overflow-y: scroll;
+  display: flex;
+  align-items: center;
+}
+.component__img {
+  width: 100px;
 }
 .hidden {
   display: none;
@@ -345,8 +422,7 @@
 .shop__rom::before {
   content: "Накопительные твердотельники";
 }
-.components{
-
+.components {
 }
 .shop__info {
   display: flex;
@@ -454,8 +530,11 @@
 }
 @media screen and (max-width: 640px) {
   .my__modal-final {
-    width: 80vw;
+    width: 100vw;
   }
+  /* .build__img {
+    height: 150px;
+  } */
 }
 @media screen and (max-width: 467px) {
   .my__modal-three {
