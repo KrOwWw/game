@@ -209,14 +209,70 @@ sixthCheck.addEventListener("click", () => {
 
 // FINAL QUESTION
 
+const buildingPc = document.querySelector(".quiz__building-pc");
+const noComponents = document.querySelector(".no-components");
+
+const boughtComponentCpu = document.querySelectorAll(".bought-component cpu");
+const boughtComponentRam = document.querySelectorAll(".bought-component ram");
+const boughtComponentRom = document.querySelectorAll(".bought-component rom");
+const boughtComponentGpu = document.querySelectorAll(".bought-component gpu");
+const boughtComponentPowerUnit = document.querySelectorAll(".bought-component power-unit");
 const components = document.querySelectorAll(".pay");
+const componentsCpu = document.querySelectorAll(".cpu__pay");
+const componentsRam = document.querySelectorAll(".ram__pay");
+const componentsRom = document.querySelectorAll(".rom__pay");
+const componentsGpu = document.querySelectorAll(".gpu__pay");
+const componentsPowerUnit = document.querySelectorAll(".power-unit__pay");
 const openShop = document.querySelector(".open-shop");
 const shop = document.querySelector(".shop");
 let opened = false;
 
-components.forEach((component) => {
-  component.addEventListener("click", () => {
-    component.setAttribute("disabled", "");
+componentsCpu.forEach((componentCpu) => {
+  componentCpu.addEventListener("click", () => {
+    componentCpu.setAttribute("disabled", "");
+    componentCpu.innerHTML = `Куплено!`
+    noComponents.classList.add("hidden")
+    buildingPc.classList.remove("hidden")
+
+    componentsCpu.forEach((componentCpu) => {
+      componentCpu.setAttribute("disabled", "");
+    })
+  });
+});
+componentsRom.forEach((componentRom) => {
+  componentRom.addEventListener("click", () => {
+    componentRom.setAttribute("disabled", "");
+    componentRom.innerHTML = `Куплено!`
+    componentsRom.forEach((componentRom) => {
+      componentRom.setAttribute("disabled", "");
+    })
+  });
+});
+componentsPowerUnit.forEach((componentPowerUnit) => {
+  componentPowerUnit.addEventListener("click", () => {
+    componentPowerUnit.setAttribute("disabled", "");
+    componentPowerUnit.innerHTML = `Куплено!`
+    componentsPowerUnit.forEach((componentPowerUnit) => {
+      componentPowerUnit.setAttribute("disabled", "");
+    })
+  });
+});
+componentsGpu.forEach((componentGpu) => {
+  componentGpu.addEventListener("click", () => {
+    componentGpu.setAttribute("disabled", "");
+    componentGpu.innerHTML = `Куплено!`
+    componentsGpu.forEach((componentGpu) => {
+      componentGpu.setAttribute("disabled", "");
+    })
+  });
+});
+componentsRam.forEach((componentRam) => {
+  componentRam.addEventListener("click", () => {
+    componentRam.setAttribute("disabled", "");
+    componentRam.innerHTML = `Куплено!`
+    componentsRam.forEach((componentRam) => {
+      componentRam.setAttribute("disabled", "");
+    })
   });
 });
 
@@ -229,3 +285,5 @@ openShop.addEventListener("click", () => {
     opened = false;
   }
 });
+
+
