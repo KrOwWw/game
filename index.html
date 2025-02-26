@@ -475,7 +475,27 @@
             Закрыть
           </button>
           <div class="quiz">
-            <h1 class="quiz__question">5. Соберите компьютер</h1>
+            <h1 class="quiz__question">6. Соберите компьютер</h1>
+            <div class="quiz__building-pc hidden">
+              <div class="build"></div>
+              <div class="bought-components">
+                <div class="bought-component cpu hidden">
+                  <img class="bought-component__img" src="./img/final-level/bought-components/" alt="">
+                </div>
+                <div class="bought-component gpu hidden">
+                  <img class="bought-component__img" src="./img/final-level/bought-components/" alt="">
+                </div>
+                <div class="bought-component ram hidden">
+                  <img class="bought-component__img" src="./img/final-level/bought-components/" alt="">
+                </div>
+                <div class="bought-component rom hidden">
+                  <img class="bought-component__img" src="./img/final-level/bought-components/" alt="">
+                </div>
+                <div class="bought-component power-unit hidden">
+                  <img class="bought-component__img" src="./img/final-level/bought-components/" alt="">
+                </div>
+              </div>
+            </div>
             <div class="no-components">У вас пока нет комплетующих</div>
             <button class="open-shop">Магазин</button>
             <div class="shop hidden">
@@ -486,9 +506,12 @@
                       class="shop__img"
                       src="./img/final-level/cpu/low-cpu.jpg"
                       alt=""
+                      draggable="false"
                     />
-                    <div class="cpu__title">Intel Core i5 10400F</div>
-                    <div class="cpu__price">2 800</div>
+                    <div class="shop__text">
+                      <div class="cpu__title">Intel Core i5 10400F</div>
+                      <div class="cpu__price">2 800</div>
+                    </div>
                   </div>
                   <button class="cpu__pay pay pay-xeon">Купить</button>
                 </div>
@@ -498,9 +521,12 @@
                       class="shop__img"
                       src="./img/final-level/cpu/medium-cpu.jpg"
                       alt=""
+                      draggable="false"
                     />
-                    <div class="cpu__title">Intel Core i5 11400F</div>
-                    <div class="cpu__price">19 000</div>
+                    <div class="shop__text">
+                      <div class="cpu__title">Intel Core i5 11400F</div>
+                      <div class="cpu__price">19 000</div>
+                    </div>
                   </div>
                   <button class="cpu__pay pay pay-i5">Купить</button>
                 </div>
@@ -510,9 +536,12 @@
                       class="shop__img"
                       src="./img/final-level/cpu/high-cpu.jpg"
                       alt=""
+                      draggable="false"
                     />
-                    <div class="cpu__title">Intel Core i5-10600KF</div>
-                    <div class="cpu__price">40 000</div>
+                    <div class="shop__text">
+                      <div class="cpu__title">Intel Core i5-10600KF</div>
+                      <div class="cpu__price">40 000</div>
+                    </div>
                   </div>
                   <button class="cpu__pay pay pay-i7">Купить</button>
                 </div>
@@ -520,66 +549,42 @@
               <div class="shop__ram block-components">
                 <div class="ram component">
                   <div class="shop__info">
-                    <div class="ram__title">Adata 8гб</div>
-                    <div class="ram__price">3 000</div>
+                    <img
+                      class="shop__img"
+                      src="./img/final-level/ram/ozu1.jpg"
+                      alt=""
+                      draggable="false"
+                    />
+                    <div class="ram__title">HyperX Fury 8гб</div>
+                    <div class="ram__price">1 500</div>
                   </div>
                   <button class="ram__pay pay pay-adata">Купить</button>
                 </div>
                 <div class="ram component">
                   <div class="shop__info">
-                    <div class="ram__title">Kingston 16гб</div>
-                    <div class="ram__price">5 000</div>
+                    <img
+                      class="shop__img"
+                      src="./img/final-level/ram/ozu1.jpg"
+                      alt=""
+                      draggable="false"
+                    />
+                    <div class="ram__title">HyperX Fury 16гб</div>
+                    <div class="ram__price">4 000</div>
                   </div>
                   <button class="ram__pay pay pay-kingston">Купить</button>
                 </div>
                 <div class="ram component">
                   <div class="shop__info">
-                    <div class="ram__title">Samsung 32гб</div>
+                    <img
+                      class="shop__img"
+                      src="./img/final-level/ram/ozu1.jpg"
+                      alt=""
+                      draggable="false"
+                    />
+                    <div class="ram__title">HyperX Fury 32гб</div>
                     <div class="ram__price">7 000</div>
                   </div>
                   <button class="ram__pay pay pay-samsung">Купить</button>
-                </div>
-              </div>
-              <div class="shop__motherboard block-components">
-                <div class="motherboard component">
-                  <div class="shop__info">
-                    <img
-                      class="shop__img"
-                      src="./img/final-level/motherboard/low-morherboard.jpg"
-                      alt=""
-                    />
-                    <div class="motherboard__title">Gigabyte</div>
-                    <div class="motherboard__price">6 000</div>
-                  </div>
-                  <button class="motherboard__pay pay pay-gigabyte">
-                    Купить
-                  </button>
-                </div>
-                <div class="motherboard component">
-                  <div class="shop__info">
-                    <img
-                      class="shop__img"
-                      src="./img/final-level/motherboard/medium-motherboard.jpg"
-                      alt=""
-                    />
-                    <div class="motherboard__title">Asrock</div>
-                    <div class="motherboard__price">10 000</div>
-                  </div>
-                  <button class="motherboard__pay pay pay-asrock">
-                    Купить
-                  </button>
-                </div>
-                <div class="motherboard component">
-                  <div class="shop__info">
-                    <img
-                      class="shop__img"
-                      src="./img/final-level/motherboard/high-motherboard.jpg"
-                      alt=""
-                    />
-                    <div class="motherboard__title">MSI</div>
-                    <div class="motherboard__price">16 000</div>
-                  </div>
-                  <button class="motherboard__pay pay pay-msi">Купить</button>
                 </div>
               </div>
               <div class="shop__power-unit block-components">
@@ -589,9 +594,12 @@
                       class="shop__img"
                       src="./img/final-level/power-unit/low-power-unit.jpg"
                       alt=""
+                      draggable="false"
                     />
-                    <div class="power-unit__title">IWONGOU 500W</div>
-                    <div class="power-unit__price">2 000</div>
+                    <div class="shop__text">
+                      <div class="power-unit__title">IWONGOU 500W</div>
+                      <div class="power-unit__price">2 000</div>
+                    </div>
                   </div>
                   <button class="power-unit__pay pay pay-iwongou">
                     Купить
@@ -603,9 +611,12 @@
                       class="shop__img"
                       src="./img/final-level/power-unit/medium-power-unit.jpg"
                       alt=""
+                      draggable="false"
                     />
-                    <div class="power-unit__title">Deepcool 750W</div>
-                    <div class="power-unit__price">5 000</div>
+                    <div class="shop__text">
+                      <div class="power-unit__title">Deepcool 750W</div>
+                      <div class="power-unit__price">5 000</div>
+                    </div>
                   </div>
                   <button class="power-unit__pay pay pay-deepcool">
                     Купить
@@ -617,9 +628,12 @@
                       class="shop__img"
                       src="./img/final-level/power-unit/high-power-unit.jpg"
                       alt=""
+                      draggable="false"
                     />
-                    <div class="power-unit__title">PCCOOLER 1000W</div>
-                    <div class="power-unit__price">8 000</div>
+                    <div class="shop__text">
+                      <div class="power-unit__title">PCCOOLER 1000W</div>
+                      <div class="power-unit__price">8 000</div>
+                    </div>
                   </div>
                   <button class="power-unit__pay pay pay-pccooler">
                     Купить
@@ -633,9 +647,12 @@
                       class="shop__img"
                       src="./img/final-level/gpu/low-gpu.jpg"
                       alt=""
+                      draggable="false"
                     />
-                    <div class="gpu__title">MSI GeForce RTX 2060 SUPER</div>
-                    <div class="gpu__price">26 000</div>
+                    <div class="shop__text">
+                      <div class="gpu__title">RTX 2060 SUPER</div>
+                      <div class="gpu__price">26 000</div>
+                    </div>
                   </div>
                   <button class="gpu__pay pay pay-2060">Купить</button>
                 </div>
@@ -645,9 +662,12 @@
                       class="shop__img"
                       src="./img/final-level/gpu/medium-gpu.jpg"
                       alt=""
+                      draggable="false"
                     />
-                    <div class="gpu__title">Gigabyte GeForce RTX 3060</div>
-                    <div class="gpu__price">38 000</div>
+                    <div class="shop__text">
+                      <div class="gpu__title">RTX 3060</div>
+                      <div class="gpu__price">38 000</div>
+                    </div>
                   </div>
                   <button class="gpu__pay pay pay-3060">Купить</button>
                 </div>
@@ -657,11 +677,61 @@
                       class="shop__img"
                       src="./img/final-level/gpu/high-gpu.jpg"
                       alt=""
+                      draggable="false"
                     />
-                    <div class="gpu__title">ASUS GeForce RTX 4060 Ti</div>
-                    <div class="gpu__price">66 000</div>
+                    <div class="shop__text">
+                      <div class="gpu__title">RTX 4060 Ti</div>
+                      <div class="gpu__price">66 000</div>
+                    </div>
                   </div>
                   <button class="gpu__pay pay pay-4060">Купить</button>
+                </div>
+              </div>
+              <div class="shop__rom block-components">
+                <div class="rom component">
+                  <div class="shop__info">
+                    <img
+                      class="shop__img"
+                      src="./img/final-level/rom/hdd.jpg"
+                      alt=""
+                      draggable="false"
+                    />
+                    <div class="shop__text">
+                      <div class="rom__title">HDD</div>
+                      <div class="rom__price">3 000</div>
+                    </div>
+                  </div>
+                  <button class="rom__pay pay pay-2060">Купить</button>
+                </div>
+                <div class="rom component">
+                  <div class="shop__info">
+                    <img
+                      class="shop__img"
+                      src="./img/final-level/rom/ssd.jpg"
+                      alt=""
+                      draggable="false"
+                    />
+                    <div class="shop__text">
+                      <div class="rom__title">SSD</div>
+                      <div class="rom__price">5 000</div>
+                    </div>
+                  </div>
+                  <button class="rom__pay pay pay-3060">Купить</button>
+                </div>
+                <div class="rom component">
+                  <div class="shop__info">
+                    <img
+                      class="shop__img"
+                      src="./img/final-level/rom/nvme.jpg"
+                      alt=""
+                      draggable="false"
+                    />
+                    <div class="shop__text">
+                      <div class="rom__title">NVME</div>
+                      <div class="rom__price">9 000</div>
+                    </div>
+                  </div>
+                  <button class="rom__pay pay pay-4060">Купить</button>
                 </div>
               </div>
             </div>
