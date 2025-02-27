@@ -685,6 +685,8 @@ openShop.addEventListener("click", () => {
 
 reset.addEventListener("click", () => {
   money += moneySpent;
+  userMoney.innerHTML = money;
+  moneySpent = 0;
 
   boughtComponentCpu.classList.add("hidden");
   boughtComponentRam.classList.add("hidden");
