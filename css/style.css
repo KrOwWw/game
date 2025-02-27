@@ -16,6 +16,19 @@
 .body {
   font-family: sans-serif;
 }
+.money {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color:#fff;
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(to bottom, rgb(0, 0, 0), #97979700);
+  position: absolute;
+  top: 0;
+  right: 0;
+}
 .mini-game {
   display: flex;
   flex-direction: column;
@@ -341,8 +354,8 @@
 .ram-down {
   position: relative;
   content: "";
-  /* background-color: #ffe600; */
-  width: 18px;
+  background-color: #ffe600;
+  width: 69px;
   height: 69px;
   top: 16px;
   right: -100px;
@@ -390,6 +403,12 @@
   overflow-y: scroll;
   display: flex;
   align-items: center;
+} 
+.bought-components{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 .component__img {
   width: 100px;
