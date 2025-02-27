@@ -6,9 +6,8 @@ const myModal = new HystModal({
 const root = document.querySelector(":root");
 let userScore = 0;
 let userMoney = document.querySelector(".money__number");
-let money = 100000
-let completed = 1
-userMoney.innerHTML = money
+let money = 100000;
+userMoney.innerHTML = money;
 // VIDEO
 
 const pausedVideo = document.querySelector(".paused__video");
@@ -23,7 +22,7 @@ pausedVideo.addEventListener("click", () => {
 const firstResult = document.querySelector("#firstResult");
 const firstAnswers = document.querySelectorAll(".first-answers");
 const secondQuiz = document.querySelector(".second__quiz");
-const attention2 = document.querySelector('.second__attention')
+const attention2 = document.querySelector(".second__attention");
 
 for (let item of firstAnswers) {
   item.addEventListener("click", () => {
@@ -37,16 +36,15 @@ for (let item of firstAnswers) {
     } else {
       firstResult.innerHTML = `Неправильно! Правильный ответ "Программа"`;
       item.classList.add("user-choice");
-      money = money - 10000
-      userMoney.innerHTML = money
+      money = money - 10000;
+      userMoney.innerHTML = money;
       for (let item2 of firstAnswers) {
         if (!item2.classList.contains("user-choice")) item2.remove();
       }
     }
-    completed++
 
-    attention2.classList.add("hidden")
-    secondQuiz.classList.remove("hidden")
+    attention2.classList.add("hidden");
+    secondQuiz.classList.remove("hidden");
   });
 }
 
@@ -72,17 +70,16 @@ for (let item of secondAnswers) {
     } else {
       secondResult.innerHTML = `Неправильно! Правильный ответ "Программное обеспечение"`;
       item.classList.add("user-choice");
-      money = money - 10000
-      userMoney.innerHTML = money
+      money = money - 10000;
+      userMoney.innerHTML = money;
       for (let item2 of secondAnswers) {
         if (!item2.classList.contains("user-choice")) item2.remove();
       }
     }
-    attention3.classList.add("hidden")
-    thirdQuiz.classList.remove("hidden")
+    attention3.classList.add("hidden");
+    thirdQuiz.classList.remove("hidden");
   });
 }
-
 
 // FOURTH QUESTION
 
@@ -102,11 +99,11 @@ const fourthCheck = document.querySelector(".fourth__check");
 const fourthResult = document.querySelector("#fourthResult");
 
 const fourthQuiz = document.querySelector(".fourth__quiz");
-const attention4 = document.querySelector('.fourth__attention')
+const attention4 = document.querySelector(".fourth__attention");
 
 let dragItem = null;
 let isDragging = true;
-let minus = 10000
+let minus = 10000;
 
 items.forEach((item) => {
   item.addEventListener("dragstart", dragStart);
@@ -153,14 +150,17 @@ fourthCheck.addEventListener("click", () => {
     fourthResult.innerHTML = `Правильно`;
   } else {
     fourthResult.innerHTML = `Неправильно`;
+    money = money - 10000;
+    userMoney.innerHTML = money;
   }
-  attention4.classList.add("hidden")
-  fourthQuiz.classList.remove("hidden")
+  attention4.classList.add("hidden");
+  fourthQuiz.classList.remove("hidden");
 });
 
 // FIFTH QUESTION
+
 const fifthQuiz = document.querySelector(".fifth__quiz");
-const attention5 = document.querySelector('.fifth__attention')
+const attention5 = document.querySelector(".fifth__attention");
 
 const projects = document.querySelectorAll(".project");
 const peoples = document.querySelectorAll(".people");
@@ -177,7 +177,7 @@ const fifthResult = document.querySelector("#fifthResult");
 
 let dragItem2 = null;
 let isDragging2 = true;
-let minus2 = 10000
+let minus2 = 10000;
 
 projects.forEach((project) => {
   project.addEventListener("dragstart", dragStart);
@@ -220,34 +220,37 @@ fifthCheck.addEventListener("click", () => {
     fifthResult.innerHTML = `Правильно`;
   } else {
     fifthResult.innerHTML = `Неправильно`;
-    money = money - minus2
-    userMoney.innerHTML = money
-    minus2 = 0
+    money = money - minus2;
+    userMoney.innerHTML = money;
+    minus2 = 0;
   }
-  attention5.classList.add("hidden")
-  fifthQuiz.classList.remove("hidden")
+  attention5.classList.add("hidden");
+  fifthQuiz.classList.remove("hidden");
 });
-
 
 // SIXTH QUESTION
 
 const sixthCheck = document.querySelector(".sixth__check");
 const quizInput = document.querySelector(".quiz__input");
 const sixthResult = document.querySelector("#sixthResult");
-let attempts = 2
+const sixthQuiz = document.querySelector(".final__quiz");
+const attentionFinal = document.querySelector(".final__attention");
+let attempts = 2;
 
 sixthCheck.addEventListener("click", () => {
   if (quizInput.value === "coder") {
     sixthResult.innerHTML = `Правильно`;
   } else {
-    if(attempts === 0){
+    if (attempts === 0) {
       sixthResult.innerHTML = `Неправильно`;
-      money = money - 10000
-      userMoney.innerHTML = money
+      money = money - 10000;
+      userMoney.innerHTML = money;
     }
     sixthResult.innerHTML = `Неправильно`;
-    attempts--
+    attempts--;
   }
+  attentionFinal.classList.add("hidden");
+  sixthQuiz.classList.remove("hidden");
 });
 
 // FINAL QUESTION
@@ -289,6 +292,7 @@ const openShop = document.querySelector(".open-shop");
 const startPc = document.querySelector(".start-pc");
 const reset = document.querySelector(".reset");
 const shop = document.querySelector(".shop");
+
 let opened = false;
 
 componentCpuDown.addEventListener("dragover", dragOver);
@@ -336,17 +340,36 @@ componentsCpu.forEach((componentCpu) => {
     buildingPc.classList.remove("hidden");
     boughtComponentCpu.classList.remove("hidden");
 
+    if (componentCpu.classList.contains("pay-10400")) {
+      money = money - 9000;
+      userMoney.innerHTML = money;
+    }
+    if (componentCpu.classList.contains("pay-11400")) {
+      money = money - 1150;
+      userMoney.innerHTML = money;
+    }
+    if (componentCpu.classList.contains("pay-10600")) {
+      money = money - 12500;
+      userMoney.innerHTML = money;
+    }
+    console.log(componentCpu.className);
+
     componentsCpu.forEach((componentCpu) => {
       componentCpu.setAttribute("disabled", "");
     });
   });
 });
 componentsRom.forEach((componentRom) => {
+  const romPrice = document.querySelector(".rom__price");
   componentRom.addEventListener("click", () => {
     componentRom.setAttribute("disabled", "");
     componentRom.innerHTML = `Куплено!`;
     noComponents.classList.add("hidden");
     buildingPc.classList.remove("hidden");
+
+    money = money - parseInt(romPrice.innerText);
+    userMoney.innerHTML = money;
+
     if (componentRom.classList.contains("pay-hdd")) {
       boughtComponentHdd.classList.remove("hidden");
     } else if (componentRom.classList.contains("pay-ssd")) {
@@ -361,11 +384,17 @@ componentsRom.forEach((componentRom) => {
   });
 });
 componentsPowerUnit.forEach((componentPowerUnit) => {
+  const powerUnitPrice = document.querySelector(".power-unit__price");
+
   componentPowerUnit.addEventListener("click", () => {
     componentPowerUnit.setAttribute("disabled", "");
     componentPowerUnit.innerHTML = `Куплено!`;
     buildingPc.classList.remove("hidden");
     noComponents.classList.add("hidden");
+
+    money = money - parseInt(powerUnitPrice.innerText);
+    userMoney.innerHTML = money;
+
     boughtComponentPowerUnit.classList.remove("hidden");
     componentsPowerUnit.forEach((componentPowerUnit) => {
       componentPowerUnit.setAttribute("disabled", "");
@@ -373,11 +402,16 @@ componentsPowerUnit.forEach((componentPowerUnit) => {
   });
 });
 componentsGpu.forEach((componentGpu) => {
+  const gpuPrice = document.querySelector(".gpu__price");
   componentGpu.addEventListener("click", () => {
     componentGpu.setAttribute("disabled", "");
     componentGpu.innerHTML = `Куплено!`;
     buildingPc.classList.remove("hidden");
     noComponents.classList.add("hidden");
+
+    money = money - parseInt(gpuPrice.innerText);
+    userMoney.innerHTML = money;
+
     boughtComponentGpu.classList.remove("hidden");
     componentsGpu.forEach((componentGpu) => {
       componentGpu.setAttribute("disabled", "");
@@ -385,11 +419,16 @@ componentsGpu.forEach((componentGpu) => {
   });
 });
 componentsRam.forEach((componentRam) => {
+  const ramPrice = document.querySelector(".ram__price");
   componentRam.addEventListener("click", () => {
     componentRam.setAttribute("disabled", "");
     componentRam.innerHTML = `Куплено!`;
     buildingPc.classList.remove("hidden");
     noComponents.classList.add("hidden");
+
+    money = money - parseInt(ramPrice.innerText);
+    userMoney.innerHTML = money;
+
     boughtComponentRam.classList.remove("hidden");
     componentsRam.forEach((componentRam) => {
       componentRam.setAttribute("disabled", "");
