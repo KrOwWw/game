@@ -17,6 +17,14 @@
     <title>Document</title>
   </head>
   <body class="body">
+    <div class="money">
+      <div class="money__text">
+        Ваш баланс:
+      </div>
+      <span class="money__number">
+        
+      </span>
+    </div>
     <section class="mini-game">
       <div class="mini-game__container">
         <img
@@ -62,6 +70,7 @@
     </section>
 
     <!-- MODALS BEGIN -->
+    
     <div
       class="hystmodal"
       id="myModal"
@@ -169,42 +178,43 @@
           >
             Закрыть
           </button>
-          <div class="quiz">
-            <h1 class="quiz__question">
-              2. Как называется набор команд, который помогает компьютеру
-              выполнять задачи, такие как обработка текста или создание
-              изображений?
-            </h1>
-            <div class="quiz__answers">
-              <div
-                class="answers second-answers second-incorrect"
-                id="manual"
-              >
-                Инструкция
+          <h1 class="second__attention">Завершите предыдущее задание</h1>
+          <div class="quiz second__quiz hidden">
+              <h1 class="quiz__question">
+                2. Как называется набор команд, который помогает компьютеру
+                выполнять задачи, такие как обработка текста или создание
+                изображений?
+              </h1>
+              <div class="quiz__answers ">
+                <div
+                  class="answers second-answers second-incorrect"
+                  id="manual"
+                >
+                  Инструкция
+                </div>
+                <div
+                  class="answers second-answers correct"
+                  id="secondCorrect"
+                >
+                  Программное обеспечение
+                </div>
+                <div
+                  class="answers second-answers second-incorrect"
+                  id="guide"
+                >
+                  Руководство
+                </div>
+                <div
+                  class="answers second-answers second-incorrect"
+                  id="setRules"
+                >
+                  Набор правил
+                </div>
               </div>
               <div
-                class="answers second-answers correct"
-                id="secondCorrect"
-              >
-                Программное обеспечение
-              </div>
-              <div
-                class="answers second-answers second-incorrect"
-                id="guide"
-              >
-                Руководство
-              </div>
-              <div
-                class="answers second-answers second-incorrect"
-                id="setRules"
-              >
-                Набор правил
-              </div>
-            </div>
-            <div
-              id="secondResult"
-              class="result"
-            ></div>
+                id="secondResult"
+                class="result"
+              ></div>
           </div>
         </div>
       </div>
@@ -226,7 +236,8 @@
           >
             Закрыть
           </button>
-          <div class="quiz">
+          <h1 class="third__attention">Завершите предыдущее задание</h1>
+          <div class="quiz third__quiz hidden">
             <h1 class="quiz__question">3. Перетащите элементы</h1>
             <div class="quiz__blocks">
               <div class="blocks__input-output">
@@ -342,8 +353,9 @@
           >
             Закрыть
           </button>
-          <div class="quiz">
-            <h1 class="quiz__question">4. Перетащите элементы</h1>
+          <h1 class="fourth__attention">Завершите предыдущее задание</h1>
+          <div class="quiz fourth__quiz hidden">
+            <h1 class="quiz__question ">4. Перетащите элементы</h1>
             <div class="quiz__blocks">
               <div class="blocks__peoples">
                 <div class="people durov">
@@ -432,7 +444,8 @@
           >
             Закрыть
           </button>
-          <div class="quiz">
+          <h1 class="fifth__attention">Завершите предыдущее задание</h1>
+          <div class="quiz fifth__quiz hidden">
             <h1 class="quiz__question">5. Шифр цезаря</h1>
             <div class="quiz__alphabet">
               <span>Расшифруйте слово "eqfgs" (сдвиг вправо на 3)</span>
@@ -474,7 +487,8 @@
           >
             Закрыть
           </button>
-          <div class="quiz">
+          <h1 class="final__attention">Завершите предыдущее задание</h1>
+          <div class="quiz final__quiz hidden">
             <h1 class="quiz__question">6. Соберите компьютер</h1>
             <div class="quiz__building-pc hidden">
               <div class="build">
@@ -524,17 +538,12 @@
                 />
                 <img
                   class="component__img component__img-hdd component__img-rom hidden"
-                  src="./img/final-level/rom/hdd.jpg"
+                  src="./img/final-level/bought-components/hdd.png"
                   alt=""
                 />
                 <img
                   class="component__img component__img-ssd component__img-rom hidden"
-                  src="./img/final-level/rom/ssd.png"
-                  alt=""
-                />
-                <img
-                  class="component__img component__img-nvme component__img-rom hidden"
-                  src="./img/final-level/rom/nvme.jpg"
+                  src="./img/final-level/bought-components/ssd.png"
                   alt=""
                 />
                 <img
@@ -546,6 +555,7 @@
             </div>
             <div class="no-components">У вас пока нет комплетующих</div>
             <button class="open-shop check">Магазин</button>
+            <button class="reset check">Отменить покупки</button>
             <button class="start-pc check">Проверить</button>
             <div class="shop hidden">
               <div class="shop__cpu block-components">
@@ -559,7 +569,7 @@
                     />
                     <div class="shop__text">
                       <div class="cpu__title">Intel Core i5 10400F</div>
-                      <div class="cpu__price">2 800</div>
+                      <div class="cpu__price">9 000</div>
                     </div>
                   </div>
                   <button class="cpu__pay pay pay-xeon">Купить</button>
@@ -574,7 +584,7 @@
                     />
                     <div class="shop__text">
                       <div class="cpu__title">Intel Core i5 11400F</div>
-                      <div class="cpu__price">19 000</div>
+                      <div class="cpu__price">11 500</div>
                     </div>
                   </div>
                   <button class="cpu__pay pay pay-i5">Купить</button>
@@ -589,7 +599,7 @@
                     />
                     <div class="shop__text">
                       <div class="cpu__title">Intel Core i5-10600KF</div>
-                      <div class="cpu__price">40 000</div>
+                      <div class="cpu__price">12 500</div>
                     </div>
                   </div>
                   <button class="cpu__pay pay pay-i7">Купить</button>
@@ -605,7 +615,7 @@
                       draggable="false"
                     />
                     <div class="ram__title">HyperX Fury 8гб</div>
-                    <div class="ram__price">1 500</div>
+                    <div class="ram__price">2 000</div>
                   </div>
                   <button class="ram__pay pay pay-8gb">Купить</button>
                 </div>
@@ -618,7 +628,7 @@
                       draggable="false"
                     />
                     <div class="ram__title">HyperX Fury 16гб</div>
-                    <div class="ram__price">4 000</div>
+                    <div class="ram__price">3 000</div>
                   </div>
                   <button class="ram__pay pay pay-16gb">Купить</button>
                 </div>
@@ -631,7 +641,7 @@
                       draggable="false"
                     />
                     <div class="ram__title">HyperX Fury 32гб</div>
-                    <div class="ram__price">7 000</div>
+                    <div class="ram__price">5 000</div>
                   </div>
                   <button class="ram__pay pay pay-32gb">Купить</button>
                 </div>
@@ -681,7 +691,7 @@
                     />
                     <div class="shop__text">
                       <div class="power-unit__title">PCCOOLER 1000W</div>
-                      <div class="power-unit__price">8 000</div>
+                      <div class="power-unit__price">10 000</div>
                     </div>
                   </div>
                   <button class="power-unit__pay pay pay-pccooler">
