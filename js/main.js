@@ -688,6 +688,9 @@ reset.addEventListener("click", () => {
   userMoney.innerHTML = money;
   moneySpent = 0;
 
+  workPc.classList.remove("hidden");
+  noWorkPc.classList.add("hidden");
+
   boughtComponentCpu.classList.add("hidden");
   boughtComponentRam.classList.add("hidden");
   boughtComponentHdd.classList.add("hidden");
