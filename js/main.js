@@ -260,10 +260,11 @@ const noComponents = document.querySelector(".no-components");
 
 const boughtComponentCpu = document.querySelector(".component__img-cpu");
 const boughtComponentRam = document.querySelector(".component__img-ram");
-// const boughtComponentRom = document.querySelector(".component__img-hdd");
 const boughtComponentHdd = document.querySelector(".component__img-hdd");
 const boughtComponentSsd = document.querySelector(".component__img-ssd");
-const boughtComponentNvme = document.querySelector(".component__img-nvme");
+const boughtComponentSamsung = document.querySelector(
+  ".component__img-samsung"
+);
 const boughtComponentGpu = document.querySelector(".component__img-gpu");
 const boughtComponentPowerUnit = document.querySelector(
   ".component__img-power-unit"
@@ -293,6 +294,7 @@ const startPc = document.querySelector(".start-pc");
 const reset = document.querySelector(".reset");
 const shop = document.querySelector(".shop");
 
+let moneySpent = 0;
 let opened = false;
 
 componentCpuDown.addEventListener("dragover", dragOver);
@@ -334,105 +336,322 @@ function dragDrop() {
 
 componentsCpu.forEach((componentCpu) => {
   componentCpu.addEventListener("click", () => {
-    componentCpu.setAttribute("disabled", "");
-    componentCpu.innerHTML = `Куплено!`;
-    noComponents.classList.add("hidden");
-    buildingPc.classList.remove("hidden");
-    boughtComponentCpu.classList.remove("hidden");
-
     if (componentCpu.classList.contains("pay-10400")) {
-      money = money - 9000;
-      userMoney.innerHTML = money;
+      if (money > 9000) {
+        money = money - 9000;
+        userMoney.innerHTML = money;
+        componentCpu.setAttribute("disabled", "");
+        componentCpu.innerHTML = `Куплено!`;
+        noComponents.classList.add("hidden");
+        buildingPc.classList.remove("hidden");
+        boughtComponentCpu.classList.remove("hidden");
+
+        moneySpent += 9000;
+
+        componentsCpu.forEach((componentCpu) => {
+          componentCpu.setAttribute("disabled", "");
+        });
+      } else {
+        noComponents.classList.remove("hidden");
+        noComponents.innerHTML = `Недостаточно средств. Вы можете нажать на "отменить покупки", чтобы вернуть деньги и комплектующие`;
+      }
     }
     if (componentCpu.classList.contains("pay-11400")) {
-      money = money - 1150;
-      userMoney.innerHTML = money;
+      if (money > 11500) {
+        money = money - 11500;
+        userMoney.innerHTML = money;
+        componentCpu.setAttribute("disabled", "");
+        componentCpu.innerHTML = `Куплено!`;
+        noComponents.classList.add("hidden");
+        buildingPc.classList.remove("hidden");
+        boughtComponentCpu.classList.remove("hidden");
+
+        moneySpent += 11500;
+
+        componentsCpu.forEach((componentCpu) => {
+          componentCpu.setAttribute("disabled", "");
+        });
+      } else {
+        noComponents.classList.remove("hidden");
+        noComponents.innerHTML = `Недостаточно средств. Вы можете нажать на "отменить покупки", чтобы вернуть деньги и комплектующие`;
+      }
     }
     if (componentCpu.classList.contains("pay-10600")) {
-      money = money - 12500;
-      userMoney.innerHTML = money;
-    }
-    console.log(componentCpu.className);
+      if (money > 12500) {
+        money = money - 12500;
+        userMoney.innerHTML = money;
+        componentCpu.setAttribute("disabled", "");
+        componentCpu.innerHTML = `Куплено!`;
+        noComponents.classList.add("hidden");
+        buildingPc.classList.remove("hidden");
+        boughtComponentCpu.classList.remove("hidden");
 
-    componentsCpu.forEach((componentCpu) => {
-      componentCpu.setAttribute("disabled", "");
-    });
+        moneySpent += 12500;
+
+        componentsCpu.forEach((componentCpu) => {
+          componentCpu.setAttribute("disabled", "");
+        });
+      } else {
+        noComponents.classList.remove("hidden");
+        noComponents.innerHTML = `Недостаточно средств. Вы можете нажать на "отменить покупки", чтобы вернуть деньги и комплектующие`;
+      }
+    }
   });
 });
 componentsRom.forEach((componentRom) => {
-  const romPrice = document.querySelector(".rom__price");
   componentRom.addEventListener("click", () => {
-    componentRom.setAttribute("disabled", "");
-    componentRom.innerHTML = `Куплено!`;
-    noComponents.classList.add("hidden");
-    buildingPc.classList.remove("hidden");
-
-    money = money - parseInt(romPrice.innerText);
-    userMoney.innerHTML = money;
-
     if (componentRom.classList.contains("pay-hdd")) {
-      boughtComponentHdd.classList.remove("hidden");
-    } else if (componentRom.classList.contains("pay-ssd")) {
-      boughtComponentSsd.classList.remove("hidden");
-    } else if (componentRom.classList.contains("pay-nvme")) {
-      boughtComponentNvme.classList.remove("hidden");
-    }
+      if (money > 3000) {
+        money = money - 3000;
+        userMoney.innerHTML = money;
+        boughtComponentHdd.classList.remove("hidden");
+        componentRom.setAttribute("disabled", "");
+        componentRom.innerHTML = `Куплено!`;
+        noComponents.classList.add("hidden");
+        buildingPc.classList.remove("hidden");
 
-    componentsRom.forEach((componentRom) => {
-      componentRom.setAttribute("disabled", "");
-    });
+        moneySpent += 3000;
+
+        componentsRom.forEach((componentRom) => {
+          componentRom.setAttribute("disabled", "");
+        });
+      } else {
+        noComponents.classList.remove("hidden");
+        noComponents.innerHTML = `Недостаточно средств. Вы можете нажать на "отменить покупки", чтобы вернуть деньги и комплектующие`;
+      }
+    }
+    if (componentRom.classList.contains("pay-ssd")) {
+      if (money > 5000) {
+        money = money - 5000;
+        userMoney.innerHTML = money;
+        boughtComponentSsd.classList.remove("hidden");
+        componentRom.setAttribute("disabled", "");
+        componentRom.innerHTML = `Куплено!`;
+        noComponents.classList.add("hidden");
+        buildingPc.classList.remove("hidden");
+
+        moneySpent += 5000;
+
+        componentsRom.forEach((componentRom) => {
+          componentRom.setAttribute("disabled", "");
+        });
+      } else {
+        noComponents.classList.remove("hidden");
+        noComponents.innerHTML = `Недостаточно средств. Вы можете нажать на "отменить покупки", чтобы вернуть деньги и комплектующие`;
+      }
+    }
+    if (componentRom.classList.contains("pay-samsung")) {
+      if (money > 9000) {
+        money = money - 9000;
+        userMoney.innerHTML = money;
+        boughtComponentSamsung.classList.remove("hidden");
+        componentRom.setAttribute("disabled", "");
+        componentRom.innerHTML = `Куплено!`;
+        noComponents.classList.add("hidden");
+        buildingPc.classList.remove("hidden");
+
+        moneySpent += 9000;
+
+        componentsRom.forEach((componentRom) => {
+          componentRom.setAttribute("disabled", "");
+        });
+      } else {
+        noComponents.classList.remove("hidden");
+        noComponents.innerHTML = `Недостаточно средств. Вы можете нажать на "отменить покупки", чтобы вернуть деньги и комплектующие`;
+      }
+    }
   });
 });
 componentsPowerUnit.forEach((componentPowerUnit) => {
-  const powerUnitPrice = document.querySelector(".power-unit__price");
-
   componentPowerUnit.addEventListener("click", () => {
-    componentPowerUnit.setAttribute("disabled", "");
-    componentPowerUnit.innerHTML = `Куплено!`;
-    buildingPc.classList.remove("hidden");
-    noComponents.classList.add("hidden");
+    if (componentPowerUnit.classList.contains("pay-iwongou")) {
+      if (money > 2000) {
+        money = money - 2000;
+        userMoney.innerHTML = money;
+        componentPowerUnit.setAttribute("disabled", "");
+        componentPowerUnit.innerHTML = `Куплено!`;
+        buildingPc.classList.remove("hidden");
+        noComponents.classList.add("hidden");
+        boughtComponentPowerUnit.classList.remove("hidden");
 
-    money = money - parseInt(powerUnitPrice.innerText);
-    userMoney.innerHTML = money;
+        moneySpent += 2000;
 
-    boughtComponentPowerUnit.classList.remove("hidden");
-    componentsPowerUnit.forEach((componentPowerUnit) => {
-      componentPowerUnit.setAttribute("disabled", "");
-    });
+        componentsPowerUnit.forEach((componentPowerUnit) => {
+          componentPowerUnit.setAttribute("disabled", "");
+        });
+      } else {
+        noComponents.classList.remove("hidden");
+        noComponents.innerHTML = `Недостаточно средств. Вы можете нажать на "отменить покупки", чтобы вернуть деньги и комплектующие`;
+      }
+    }
+    if (componentPowerUnit.classList.contains("pay-deepcool")) {
+      if (money > 5000) {
+        money = money - 5000;
+        userMoney.innerHTML = money;
+        componentPowerUnit.setAttribute("disabled", "");
+        componentPowerUnit.innerHTML = `Куплено!`;
+        buildingPc.classList.remove("hidden");
+        noComponents.classList.add("hidden");
+        boughtComponentPowerUnit.classList.remove("hidden");
+
+        moneySpent += 5000;
+
+        componentsPowerUnit.forEach((componentPowerUnit) => {
+          componentPowerUnit.setAttribute("disabled", "");
+        });
+      } else {
+        noComponents.classList.remove("hidden");
+        noComponents.innerHTML = `Недостаточно средств. Вы можете нажать на "отменить покупки", чтобы вернуть деньги и комплектующие`;
+      }
+    }
+    if (componentPowerUnit.classList.contains("pay-pccooler")) {
+      if (money > 10000) {
+        money = money - 10000;
+        userMoney.innerHTML = money;
+        componentPowerUnit.setAttribute("disabled", "");
+        componentPowerUnit.innerHTML = `Куплено!`;
+        buildingPc.classList.remove("hidden");
+        noComponents.classList.add("hidden");
+        boughtComponentPowerUnit.classList.remove("hidden");
+
+        moneySpent += 10000;
+
+        componentsPowerUnit.forEach((componentPowerUnit) => {
+          componentPowerUnit.setAttribute("disabled", "");
+        });
+      } else {
+        noComponents.classList.remove("hidden");
+        noComponents.innerHTML = `Недостаточно средств. Вы можете нажать на "отменить покупки", чтобы вернуть деньги и комплектующие`;
+      }
+    }
   });
 });
 componentsGpu.forEach((componentGpu) => {
-  const gpuPrice = document.querySelector(".gpu__price");
   componentGpu.addEventListener("click", () => {
-    componentGpu.setAttribute("disabled", "");
-    componentGpu.innerHTML = `Куплено!`;
-    buildingPc.classList.remove("hidden");
-    noComponents.classList.add("hidden");
+    if (componentGpu.classList.contains("pay-2060")) {
+      if (money > 26000) {
+        money = money - 26000;
+        userMoney.innerHTML = money;
+        componentGpu.setAttribute("disabled", "");
+        componentGpu.innerHTML = `Куплено!`;
+        buildingPc.classList.remove("hidden");
+        noComponents.classList.add("hidden");
+        boughtComponentGpu.classList.remove("hidden");
 
-    money = money - parseInt(gpuPrice.innerText);
-    userMoney.innerHTML = money;
+        moneySpent += 26000;
 
-    boughtComponentGpu.classList.remove("hidden");
-    componentsGpu.forEach((componentGpu) => {
-      componentGpu.setAttribute("disabled", "");
-    });
+        componentsGpu.forEach((componentGpu) => {
+          componentGpu.setAttribute("disabled", "");
+        });
+      } else {
+        noComponents.classList.remove("hidden");
+        noComponents.innerHTML = `Недостаточно средств. Вы можете нажать на "отменить покупки", чтобы вернуть деньги и комплектующие`;
+      }
+    }
+    if (componentGpu.classList.contains("pay-3060")) {
+      if (money > 38000) {
+        money = money - 38000;
+        userMoney.innerHTML = money;
+        componentGpu.setAttribute("disabled", "");
+        componentGpu.innerHTML = `Куплено!`;
+        buildingPc.classList.remove("hidden");
+        noComponents.classList.add("hidden");
+        boughtComponentGpu.classList.remove("hidden");
+
+        moneySpent += 38000;
+
+        componentsGpu.forEach((componentGpu) => {
+          componentGpu.setAttribute("disabled", "");
+        });
+      } else {
+        noComponents.classList.remove("hidden");
+        noComponents.innerHTML = `Недостаточно средств. Вы можете нажать на "отменить покупки", чтобы вернуть деньги и комплектующие`;
+      }
+    }
+    if (componentGpu.classList.contains("pay-4060")) {
+      if (money > 66000) {
+        money = money - 66000;
+        userMoney.innerHTML = money;
+        componentGpu.setAttribute("disabled", "");
+        componentGpu.innerHTML = `Куплено!`;
+        buildingPc.classList.remove("hidden");
+        noComponents.classList.add("hidden");
+        boughtComponentGpu.classList.remove("hidden");
+
+        moneySpent += 66000;
+
+        componentsGpu.forEach((componentGpu) => {
+          componentGpu.setAttribute("disabled", "");
+        });
+      } else {
+        noComponents.classList.remove("hidden");
+        noComponents.innerHTML = `Недостаточно средств. Вы можете нажать на "отменить покупки", чтобы вернуть деньги и комплектующие`;
+      }
+    }
   });
 });
 componentsRam.forEach((componentRam) => {
-  const ramPrice = document.querySelector(".ram__price");
   componentRam.addEventListener("click", () => {
-    componentRam.setAttribute("disabled", "");
-    componentRam.innerHTML = `Куплено!`;
-    buildingPc.classList.remove("hidden");
-    noComponents.classList.add("hidden");
+    if (componentRam.classList.contains("pay-8gb")) {
+      if (money > 2000) {
+        money = money - 2000;
+        userMoney.innerHTML = money;
+        componentRam.setAttribute("disabled", "");
+        componentRam.innerHTML = `Куплено!`;
+        buildingPc.classList.remove("hidden");
+        noComponents.classList.add("hidden");
+        boughtComponentRam.classList.remove("hidden");
 
-    money = money - parseInt(ramPrice.innerText);
-    userMoney.innerHTML = money;
+        moneySpent += 2000;
 
-    boughtComponentRam.classList.remove("hidden");
-    componentsRam.forEach((componentRam) => {
-      componentRam.setAttribute("disabled", "");
-    });
+        componentsRam.forEach((componentRam) => {
+          componentRam.setAttribute("disabled", "");
+        });
+      } else {
+        noComponents.classList.remove("hidden");
+        noComponents.innerHTML = `Недостаточно средств. Вы можете нажать на "отменить покупки", чтобы вернуть деньги и комплектующие`;
+      }
+    }
+    if (componentRam.classList.contains("pay-16gb")) {
+      if (money > 3000) {
+        money = money - 3000;
+        userMoney.innerHTML = money;
+        componentRam.setAttribute("disabled", "");
+        componentRam.innerHTML = `Куплено!`;
+        buildingPc.classList.remove("hidden");
+        noComponents.classList.add("hidden");
+        boughtComponentRam.classList.remove("hidden");
+
+        moneySpent += 3000;
+
+        componentsRam.forEach((componentRam) => {
+          componentRam.setAttribute("disabled", "");
+        });
+      } else {
+        noComponents.classList.remove("hidden");
+        noComponents.innerHTML = `Недостаточно средств. Вы можете нажать на "отменить покупки", чтобы вернуть деньги и комплектующие`;
+      }
+    }
+    if (componentRam.classList.contains("pay-32gb")) {
+      if (money > 5000) {
+        money = money - 5000;
+        userMoney.innerHTML = money;
+        componentRam.setAttribute("disabled", "");
+        componentRam.innerHTML = `Куплено!`;
+        buildingPc.classList.remove("hidden");
+        noComponents.classList.add("hidden");
+        boughtComponentRam.classList.remove("hidden");
+
+        moneySpent += 5000;
+
+        componentsRam.forEach((componentRam) => {
+          componentRam.setAttribute("disabled", "");
+        });
+      } else {
+        noComponents.classList.remove("hidden");
+        noComponents.innerHTML = `Недостаточно средств. Вы можете нажать на "отменить покупки", чтобы вернуть деньги и комплектующие`;
+      }
+    }
   });
 });
 
@@ -441,11 +660,16 @@ startPc.addEventListener("click", () => {
     componentCpuDown.contains(boughtComponentCpu) &&
     componentGpuDown.contains(boughtComponentGpu) &&
     componentRamDown.contains(boughtComponentRam) &&
-    componentRomDown.contains(boughtComponentHdd) &&
     componentPowerUnitDown.contains(boughtComponentPowerUnit)
   ) {
-    workPc.classList.add("hidden");
-    noWorkPc.classList.remove("hidden");
+    if (
+      componentRomDown.contains(boughtComponentHdd) ||
+      componentRomDown.contains(boughtComponentSsd) ||
+      componentRomDown.contains(boughtComponentSamsung)
+    ) {
+      workPc.classList.add("hidden");
+      noWorkPc.classList.remove("hidden");
+    }
   }
 });
 
@@ -459,6 +683,35 @@ openShop.addEventListener("click", () => {
   }
 });
 
-// reset.addEventListener("click", () => {
+reset.addEventListener("click", () => {
+  money += moneySpent;
 
-// })
+  boughtComponentCpu.classList.add("hidden");
+  boughtComponentRam.classList.add("hidden");
+  boughtComponentHdd.classList.add("hidden");
+  boughtComponentSsd.classList.add("hidden");
+  boughtComponentSamsung.classList.add("hidden");
+  boughtComponentGpu.classList.add("hidden");
+  boughtComponentPowerUnit.classList.add("hidden");
+
+  componentsCpu.forEach((componentCpu) => {
+    componentCpu.removeAttribute("disabled", "");
+    componentCpu.innerHTML = `Купить`;
+  });
+  componentsRom.forEach((componentRom) => {
+    componentRom.removeAttribute("disabled", "");
+    componentRom.innerHTML = `Купить`;
+  });
+  componentsPowerUnit.forEach((componentPowerUnit) => {
+    componentPowerUnit.removeAttribute("disabled", "");
+    componentPowerUnit.innerHTML = `Купить`;
+  });
+  componentsGpu.forEach((componentGpu) => {
+    componentGpu.removeAttribute("disabled", "");
+    componentGpu.innerHTML = `Купить`;
+  });
+  componentsRam.forEach((componentRam) => {
+    componentRam.removeAttribute("disabled", "");
+    componentRam.innerHTML = `Купить`;
+  });
+});
