@@ -4,8 +4,11 @@ const myModal = new HystModal({
 });
 
 const root = document.querySelector(":root");
-const userScore = 0;
-
+let userScore = 0;
+let userMoney = document.querySelector(".money__number");
+let money = 100000
+let completed = 1
+userMoney.innerHTML = money
 // VIDEO
 
 const pausedVideo = document.querySelector(".paused__video");
@@ -19,6 +22,8 @@ pausedVideo.addEventListener("click", () => {
 
 const firstResult = document.querySelector("#firstResult");
 const firstAnswers = document.querySelectorAll(".first-answers");
+const secondQuiz = document.querySelector(".second__quiz");
+const attention2 = document.querySelector('.second__attention')
 
 for (let item of firstAnswers) {
   item.addEventListener("click", () => {
@@ -32,10 +37,16 @@ for (let item of firstAnswers) {
     } else {
       firstResult.innerHTML = `Неправильно! Правильный ответ "Программа"`;
       item.classList.add("user-choice");
+      money = money - 10000
+      userMoney.innerHTML = money
       for (let item2 of firstAnswers) {
         if (!item2.classList.contains("user-choice")) item2.remove();
       }
     }
+    completed++
+
+    attention2.classList.add("hidden")
+    secondQuiz.classList.remove("hidden")
   });
 }
 
@@ -43,6 +54,11 @@ for (let item of firstAnswers) {
 
 const secondResult = document.querySelector("#secondResult");
 const secondAnswers = document.querySelectorAll(".second-answers");
+const secondQuestion = document.querySelector(".second__question");
+const quizAnswer = document.querySelector(".quiz__answers");
+
+const attention3 = document.querySelector(".third__attention");
+const thirdQuiz = document.querySelector(".third__quiz");
 
 for (let item of secondAnswers) {
   item.addEventListener("click", () => {
@@ -56,12 +72,17 @@ for (let item of secondAnswers) {
     } else {
       secondResult.innerHTML = `Неправильно! Правильный ответ "Программное обеспечение"`;
       item.classList.add("user-choice");
+      money = money - 10000
+      userMoney.innerHTML = money
       for (let item2 of secondAnswers) {
         if (!item2.classList.contains("user-choice")) item2.remove();
       }
     }
+    attention3.classList.add("hidden")
+    thirdQuiz.classList.remove("hidden")
   });
 }
+
 
 // FOURTH QUESTION
 
@@ -80,8 +101,12 @@ const acoustics = document.querySelector(".acoustics");
 const fourthCheck = document.querySelector(".fourth__check");
 const fourthResult = document.querySelector("#fourthResult");
 
+const fourthQuiz = document.querySelector(".fourth__quiz");
+const attention4 = document.querySelector('.fourth__attention')
+
 let dragItem = null;
 let isDragging = true;
+let minus = 10000
 
 items.forEach((item) => {
   item.addEventListener("dragstart", dragStart);
@@ -129,9 +154,13 @@ fourthCheck.addEventListener("click", () => {
   } else {
     fourthResult.innerHTML = `Неправильно`;
   }
+  attention4.classList.add("hidden")
+  fourthQuiz.classList.remove("hidden")
 });
 
 // FIFTH QUESTION
+const fifthQuiz = document.querySelector(".fifth__quiz");
+const attention5 = document.querySelector('.fifth__attention')
 
 const projects = document.querySelectorAll(".project");
 const peoples = document.querySelectorAll(".people");
@@ -148,6 +177,7 @@ const fifthResult = document.querySelector("#fifthResult");
 
 let dragItem2 = null;
 let isDragging2 = true;
+let minus2 = 10000
 
 projects.forEach((project) => {
   project.addEventListener("dragstart", dragStart);
@@ -190,20 +220,33 @@ fifthCheck.addEventListener("click", () => {
     fifthResult.innerHTML = `Правильно`;
   } else {
     fifthResult.innerHTML = `Неправильно`;
+    money = money - minus2
+    userMoney.innerHTML = money
+    minus2 = 0
   }
+  attention5.classList.add("hidden")
+  fifthQuiz.classList.remove("hidden")
 });
+
 
 // SIXTH QUESTION
 
 const sixthCheck = document.querySelector(".sixth__check");
 const quizInput = document.querySelector(".quiz__input");
 const sixthResult = document.querySelector("#sixthResult");
+let attempts = 2
 
 sixthCheck.addEventListener("click", () => {
   if (quizInput.value === "coder") {
     sixthResult.innerHTML = `Правильно`;
   } else {
+    if(attempts === 0){
+      sixthResult.innerHTML = `Неправильно`;
+      money = money - 10000
+      userMoney.innerHTML = money
+    }
     sixthResult.innerHTML = `Неправильно`;
+    attempts--
   }
 });
 
@@ -244,6 +287,7 @@ const noWorkPc = document.querySelector(".no-work");
 
 const openShop = document.querySelector(".open-shop");
 const startPc = document.querySelector(".start-pc");
+const reset = document.querySelector(".reset");
 const shop = document.querySelector(".shop");
 let opened = false;
 
@@ -375,3 +419,7 @@ openShop.addEventListener("click", () => {
     opened = false;
   }
 });
+
+// reset.addEventListener("click", () => {
+
+// })
