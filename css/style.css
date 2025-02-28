@@ -15,13 +15,14 @@
 }
 .body {
   font-family: sans-serif;
+  background: #3ab54a;
 }
 .money {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color:#fff;
+  color: #fff;
   width: 100px;
   height: 100px;
   background: linear-gradient(to bottom, rgb(0, 0, 0), #97979700);
@@ -318,7 +319,7 @@
 .shop {
   position: relative;
 }
-.shop__money-number{
+.shop__money-number {
   position: sticky;
   top: 0;
   left: 4vw;
@@ -412,8 +413,8 @@
   overflow-y: scroll;
   display: flex;
   align-items: center;
-} 
-.bought-components{
+}
+.bought-components {
   display: flex;
   flex-direction: row;
   justify-content: center;
