@@ -103,7 +103,7 @@
 }
 .quiz__question {
   font-size: 24px;
-  padding-bottom: 20px;
+  padding: 5px;
 }
 .modal__video {
   display: flex;
@@ -222,6 +222,7 @@
 .blocks__output::before {
   position: absolute;
   content: "Устройства вывода";
+  white-space: nowrap;
   top: -25px;
 }
 .blocks__devices {
@@ -277,10 +278,10 @@
   text-align: center;
 }
 .check {
-  margin-top: 15px;
+  margin-top: 5px;
 }
 .result {
-  padding-top: 20px;
+  padding: 20px 0;
   font-size: 24px;
 }
 .quiz__alphabet {
@@ -313,6 +314,14 @@
   gap: 30px;
   border: #000 solid 1px;
   border-radius: 15px;
+}
+.shop {
+  position: relative;
+}
+.shop__money-number{
+  position: sticky;
+  top: 0;
+  left: 4vw;
 }
 .build-pc {
   display: flex;
@@ -413,6 +422,9 @@
 .component__img {
   width: 100px;
 }
+.start-pc {
+  margin-bottom: 15px;
+}
 .hidden {
   display: none;
 }
@@ -426,6 +438,9 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 15px;
+}
+.shop__cpu {
+  margin-top: -45px;
 }
 .shop__cpu::before,
 .shop__ram::before,
