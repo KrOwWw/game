@@ -238,9 +238,7 @@ const attentionFinal = document.querySelector(".final__attention");
 let attempts = 2;
 
 sixthCheck.addEventListener("click", () => {
-  if (quizInput.value === "Coder" || 
-    quizInput.value === "coder"
-  ) {
+  if (quizInput.value === "Coder" || quizInput.value === "coder") {
     sixthResult.innerHTML = `Правильно`;
     attentionFinal.classList.add("hidden");
     sixthQuiz.classList.remove("hidden");
@@ -319,7 +317,7 @@ componentsUp.forEach((componentUp) => {
   componentUp.addEventListener("dragend", dragEnd);
 });
 
-// const boughtComponents = document.querySelector(".bought-components")
+const boughtComponents = document.querySelector(".bought-components");
 // const componentsImg = document.querySelectorAll(".component__img")
 
 function dragStart() {
@@ -349,8 +347,7 @@ componentsCpu.forEach((componentCpu) => {
         componentCpu.innerHTML = `Куплено!`;
         noComponents.classList.add("hidden");
         buildingPc.classList.remove("hidden");
-        
-        
+
         boughtComponentCpu.classList.remove("hidden");
 
         moneySpent += 9000;
@@ -373,7 +370,7 @@ componentsCpu.forEach((componentCpu) => {
         componentCpu.innerHTML = `Куплено!`;
         noComponents.classList.add("hidden");
         buildingPc.classList.remove("hidden");
-        
+
         boughtComponentCpu.classList.remove("hidden");
 
         moneySpent += 11500;
@@ -396,7 +393,7 @@ componentsCpu.forEach((componentCpu) => {
         componentCpu.innerHTML = `Куплено!`;
         noComponents.classList.add("hidden");
         buildingPc.classList.remove("hidden");
-                
+
         boughtComponentCpu.classList.remove("hidden");
 
         moneySpent += 12500;
@@ -423,7 +420,7 @@ componentsRom.forEach((componentRom) => {
         componentRom.setAttribute("disabled", "");
         componentRom.innerHTML = `Куплено!`;
         noComponents.classList.add("hidden");
-        
+
         buildingPc.classList.remove("hidden");
 
         moneySpent += 3000;
@@ -446,7 +443,7 @@ componentsRom.forEach((componentRom) => {
         componentRom.setAttribute("disabled", "");
         componentRom.innerHTML = `Куплено!`;
         noComponents.classList.add("hidden");
-        
+
         buildingPc.classList.remove("hidden");
 
         moneySpent += 5000;
@@ -469,7 +466,7 @@ componentsRom.forEach((componentRom) => {
         componentRom.setAttribute("disabled", "");
         componentRom.innerHTML = `Куплено!`;
         noComponents.classList.add("hidden");
-                
+
         buildingPc.classList.remove("hidden");
 
         moneySpent += 9000;
@@ -491,13 +488,12 @@ componentsPowerUnit.forEach((componentPowerUnit) => {
         money = money - 2000;
         userMoney.innerHTML = money;
         shopMoney.innerHTML = money;
-        
+
         componentPowerUnit.setAttribute("disabled", "");
         componentPowerUnit.innerHTML = `Куплено!`;
         buildingPc.classList.remove("hidden");
         noComponents.classList.add("hidden");
-        
-        
+
         boughtComponentPowerUnit.classList.remove("hidden");
 
         moneySpent += 2000;
@@ -520,8 +516,7 @@ componentsPowerUnit.forEach((componentPowerUnit) => {
         componentPowerUnit.innerHTML = `Куплено!`;
         buildingPc.classList.remove("hidden");
         noComponents.classList.add("hidden");
-        
-        
+
         boughtComponentPowerUnit.classList.remove("hidden");
 
         moneySpent += 5000;
@@ -544,8 +539,7 @@ componentsPowerUnit.forEach((componentPowerUnit) => {
         componentPowerUnit.innerHTML = `Куплено!`;
         buildingPc.classList.remove("hidden");
         noComponents.classList.add("hidden");
-        
-        
+
         boughtComponentPowerUnit.classList.remove("hidden");
 
         moneySpent += 10000;
@@ -572,8 +566,7 @@ componentsGpu.forEach((componentGpu) => {
         componentGpu.innerHTML = `Куплено!`;
         buildingPc.classList.remove("hidden");
         noComponents.classList.add("hidden");
-        
-        
+
         boughtComponentGpu.classList.remove("hidden");
 
         moneySpent += 26000;
@@ -596,8 +589,7 @@ componentsGpu.forEach((componentGpu) => {
         componentGpu.innerHTML = `Куплено!`;
         buildingPc.classList.remove("hidden");
         noComponents.classList.add("hidden");
-        
-        
+
         boughtComponentGpu.classList.remove("hidden");
 
         moneySpent += 38000;
@@ -620,8 +612,7 @@ componentsGpu.forEach((componentGpu) => {
         componentGpu.innerHTML = `Куплено!`;
         buildingPc.classList.remove("hidden");
         noComponents.classList.add("hidden");
-        
-        
+
         boughtComponentGpu.classList.remove("hidden");
 
         moneySpent += 63000;
@@ -648,8 +639,7 @@ componentsRam.forEach((componentRam) => {
         componentRam.innerHTML = `Куплено!`;
         buildingPc.classList.remove("hidden");
         noComponents.classList.add("hidden");
-        
-        
+
         boughtComponentRam.classList.remove("hidden");
 
         moneySpent += 2000;
@@ -672,8 +662,7 @@ componentsRam.forEach((componentRam) => {
         componentRam.innerHTML = `Куплено!`;
         buildingPc.classList.remove("hidden");
         noComponents.classList.add("hidden");
-        
-        
+
         boughtComponentRam.classList.remove("hidden");
 
         moneySpent += 3000;
@@ -696,8 +685,7 @@ componentsRam.forEach((componentRam) => {
         componentRam.innerHTML = `Куплено!`;
         buildingPc.classList.remove("hidden");
         noComponents.classList.add("hidden");
-        
-        
+
         boughtComponentRam.classList.remove("hidden");
 
         moneySpent += 5000;
@@ -767,13 +755,13 @@ reset.addEventListener("click", () => {
   workPc.classList.remove("hidden");
   noWorkPc.classList.add("hidden");
 
-  boughtComponentCpu.classList.add("hidden");
-  boughtComponentRam.classList.add("hidden");
-  boughtComponentHdd.classList.add("hidden");
-  boughtComponentSsd.classList.add("hidden");
-  boughtComponentSamsung.classList.add("hidden");
-  boughtComponentGpu.classList.add("hidden");
-  boughtComponentPowerUnit.classList.add("hidden");
+  boughtComponents.appendChild(boughtComponentCpu);
+  boughtComponents.appendChild(boughtComponentRam);
+  boughtComponents.appendChild(boughtComponentHdd);
+  boughtComponents.appendChild(boughtComponentSsd);
+  boughtComponents.appendChild(boughtComponentSamsung);
+  boughtComponents.appendChild(boughtComponentGpu);
+  boughtComponents.appendChild(boughtComponentPowerUnit);
 
   componentsCpu.forEach((componentCpu) => {
     componentCpu.removeAttribute("disabled", "");
