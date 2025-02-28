@@ -238,7 +238,9 @@ const attentionFinal = document.querySelector(".final__attention");
 let attempts = 2;
 
 sixthCheck.addEventListener("click", () => {
-  if (quizInput.value === "coder") {
+  if (quizInput.value === "Coder" || 
+    quizInput.value === "coder"
+  ) {
     sixthResult.innerHTML = `Правильно`;
   } else {
     if (attempts === 0) {
@@ -285,6 +287,7 @@ const componentsRam = document.querySelectorAll(".ram__pay");
 const componentsRom = document.querySelectorAll(".rom__pay");
 const componentsGpu = document.querySelectorAll(".gpu__pay");
 const componentsPowerUnit = document.querySelectorAll(".power-unit__pay");
+const shopMoney = document.querySelector(".shop__money-number");
 
 const workPc = document.querySelector(".work");
 const noWorkPc = document.querySelector(".no-work");
@@ -296,6 +299,8 @@ const shop = document.querySelector(".shop");
 
 let moneySpent = 0;
 let opened = false;
+
+shopMoney.innerHTML = money
 
 componentCpuDown.addEventListener("dragover", dragOver);
 componentCpuDown.addEventListener("drop", dragDrop);
@@ -340,6 +345,8 @@ componentsCpu.forEach((componentCpu) => {
       if (money > 9000) {
         money = money - 9000;
         userMoney.innerHTML = money;
+        shopMoney.innerHTML = money;
+
         componentCpu.setAttribute("disabled", "");
         componentCpu.innerHTML = `Куплено!`;
         noComponents.classList.add("hidden");
@@ -360,6 +367,8 @@ componentsCpu.forEach((componentCpu) => {
       if (money > 11500) {
         money = money - 11500;
         userMoney.innerHTML = money;
+        shopMoney.innerHTML = money;
+
         componentCpu.setAttribute("disabled", "");
         componentCpu.innerHTML = `Куплено!`;
         noComponents.classList.add("hidden");
@@ -380,6 +389,8 @@ componentsCpu.forEach((componentCpu) => {
       if (money > 12500) {
         money = money - 12500;
         userMoney.innerHTML = money;
+        shopMoney.innerHTML = money;
+
         componentCpu.setAttribute("disabled", "");
         componentCpu.innerHTML = `Куплено!`;
         noComponents.classList.add("hidden");
@@ -404,6 +415,8 @@ componentsRom.forEach((componentRom) => {
       if (money > 3000) {
         money = money - 3000;
         userMoney.innerHTML = money;
+        shopMoney.innerHTML = money;
+
         boughtComponentHdd.classList.remove("hidden");
         componentRom.setAttribute("disabled", "");
         componentRom.innerHTML = `Куплено!`;
@@ -424,6 +437,8 @@ componentsRom.forEach((componentRom) => {
       if (money > 5000) {
         money = money - 5000;
         userMoney.innerHTML = money;
+        shopMoney.innerHTML = money;
+
         boughtComponentSsd.classList.remove("hidden");
         componentRom.setAttribute("disabled", "");
         componentRom.innerHTML = `Куплено!`;
@@ -444,6 +459,8 @@ componentsRom.forEach((componentRom) => {
       if (money > 9000) {
         money = money - 9000;
         userMoney.innerHTML = money;
+        shopMoney.innerHTML = money;
+
         boughtComponentSamsung.classList.remove("hidden");
         componentRom.setAttribute("disabled", "");
         componentRom.innerHTML = `Куплено!`;
@@ -468,6 +485,8 @@ componentsPowerUnit.forEach((componentPowerUnit) => {
       if (money > 2000) {
         money = money - 2000;
         userMoney.innerHTML = money;
+        shopMoney.innerHTML = money;
+        
         componentPowerUnit.setAttribute("disabled", "");
         componentPowerUnit.innerHTML = `Куплено!`;
         buildingPc.classList.remove("hidden");
@@ -488,6 +507,8 @@ componentsPowerUnit.forEach((componentPowerUnit) => {
       if (money > 5000) {
         money = money - 5000;
         userMoney.innerHTML = money;
+        shopMoney.innerHTML = money;
+
         componentPowerUnit.setAttribute("disabled", "");
         componentPowerUnit.innerHTML = `Куплено!`;
         buildingPc.classList.remove("hidden");
@@ -508,6 +529,8 @@ componentsPowerUnit.forEach((componentPowerUnit) => {
       if (money > 10000) {
         money = money - 10000;
         userMoney.innerHTML = money;
+        shopMoney.innerHTML = money;
+
         componentPowerUnit.setAttribute("disabled", "");
         componentPowerUnit.innerHTML = `Куплено!`;
         buildingPc.classList.remove("hidden");
@@ -532,6 +555,8 @@ componentsGpu.forEach((componentGpu) => {
       if (money > 26000) {
         money = money - 26000;
         userMoney.innerHTML = money;
+        shopMoney.innerHTML = money;
+
         componentGpu.setAttribute("disabled", "");
         componentGpu.innerHTML = `Куплено!`;
         buildingPc.classList.remove("hidden");
@@ -552,6 +577,8 @@ componentsGpu.forEach((componentGpu) => {
       if (money > 38000) {
         money = money - 38000;
         userMoney.innerHTML = money;
+        shopMoney.innerHTML = money;
+
         componentGpu.setAttribute("disabled", "");
         componentGpu.innerHTML = `Куплено!`;
         buildingPc.classList.remove("hidden");
@@ -572,6 +599,8 @@ componentsGpu.forEach((componentGpu) => {
       if (money > 66000) {
         money = money - 66000;
         userMoney.innerHTML = money;
+        shopMoney.innerHTML = money;
+
         componentGpu.setAttribute("disabled", "");
         componentGpu.innerHTML = `Куплено!`;
         buildingPc.classList.remove("hidden");
@@ -596,6 +625,8 @@ componentsRam.forEach((componentRam) => {
       if (money > 2000) {
         money = money - 2000;
         userMoney.innerHTML = money;
+        shopMoney.innerHTML = money;
+
         componentRam.setAttribute("disabled", "");
         componentRam.innerHTML = `Куплено!`;
         buildingPc.classList.remove("hidden");
@@ -616,6 +647,8 @@ componentsRam.forEach((componentRam) => {
       if (money > 3000) {
         money = money - 3000;
         userMoney.innerHTML = money;
+        shopMoney.innerHTML = money;
+
         componentRam.setAttribute("disabled", "");
         componentRam.innerHTML = `Куплено!`;
         buildingPc.classList.remove("hidden");
@@ -636,6 +669,8 @@ componentsRam.forEach((componentRam) => {
       if (money > 5000) {
         money = money - 5000;
         userMoney.innerHTML = money;
+        shopMoney.innerHTML = money;
+
         componentRam.setAttribute("disabled", "");
         componentRam.innerHTML = `Куплено!`;
         buildingPc.classList.remove("hidden");
@@ -686,6 +721,7 @@ openShop.addEventListener("click", () => {
 reset.addEventListener("click", () => {
   money += moneySpent;
   userMoney.innerHTML = money;
+  shopMoney.innerHTML = money;
   moneySpent = 0;
 
   workPc.classList.remove("hidden");
