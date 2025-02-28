@@ -242,17 +242,19 @@ sixthCheck.addEventListener("click", () => {
     quizInput.value === "coder"
   ) {
     sixthResult.innerHTML = `Правильно`;
+    attentionFinal.classList.add("hidden");
+    sixthQuiz.classList.remove("hidden");
   } else {
     if (attempts === 0) {
       sixthResult.innerHTML = `Неправильно`;
       money = money - 10000;
       userMoney.innerHTML = money;
+      attentionFinal.classList.add("hidden");
+      sixthQuiz.classList.remove("hidden");
     }
     sixthResult.innerHTML = `Неправильно`;
     attempts--;
   }
-  attentionFinal.classList.add("hidden");
-  sixthQuiz.classList.remove("hidden");
 });
 
 // FINAL QUESTION
@@ -293,14 +295,13 @@ const workPc = document.querySelector(".work");
 const noWorkPc = document.querySelector(".no-work");
 
 const openShop = document.querySelector(".open-shop");
-const startPc = document.querySelector(".start-pc");
+const startPc = document.querySelector(".pc");
+const startPcMobile = document.querySelector(".mobile");
 const reset = document.querySelector(".reset");
 const shop = document.querySelector(".shop");
 
 let moneySpent = 0;
 let opened = false;
-
-shopMoney.innerHTML = money
 
 componentCpuDown.addEventListener("dragover", dragOver);
 componentCpuDown.addEventListener("drop", dragDrop);
@@ -318,18 +319,15 @@ componentsUp.forEach((componentUp) => {
   componentUp.addEventListener("dragend", dragEnd);
 });
 
+// const boughtComponents = document.querySelector(".bought-components")
+// const componentsImg = document.querySelectorAll(".component__img")
+
 function dragStart() {
   dragItem3 = this;
-  peoples.forEach((people) => {
-    people.style.boxShadow = "0 0 10px #6f85ff";
-  });
 }
 
 function dragEnd() {
   dragItem3 = null;
-  peoples.forEach((people) => {
-    people.style.boxShadow = "none";
-  });
 }
 
 function dragOver(e) {
@@ -351,6 +349,8 @@ componentsCpu.forEach((componentCpu) => {
         componentCpu.innerHTML = `Куплено!`;
         noComponents.classList.add("hidden");
         buildingPc.classList.remove("hidden");
+        
+        
         boughtComponentCpu.classList.remove("hidden");
 
         moneySpent += 9000;
@@ -373,6 +373,7 @@ componentsCpu.forEach((componentCpu) => {
         componentCpu.innerHTML = `Куплено!`;
         noComponents.classList.add("hidden");
         buildingPc.classList.remove("hidden");
+        
         boughtComponentCpu.classList.remove("hidden");
 
         moneySpent += 11500;
@@ -395,6 +396,7 @@ componentsCpu.forEach((componentCpu) => {
         componentCpu.innerHTML = `Куплено!`;
         noComponents.classList.add("hidden");
         buildingPc.classList.remove("hidden");
+                
         boughtComponentCpu.classList.remove("hidden");
 
         moneySpent += 12500;
@@ -421,6 +423,7 @@ componentsRom.forEach((componentRom) => {
         componentRom.setAttribute("disabled", "");
         componentRom.innerHTML = `Куплено!`;
         noComponents.classList.add("hidden");
+        
         buildingPc.classList.remove("hidden");
 
         moneySpent += 3000;
@@ -443,6 +446,7 @@ componentsRom.forEach((componentRom) => {
         componentRom.setAttribute("disabled", "");
         componentRom.innerHTML = `Куплено!`;
         noComponents.classList.add("hidden");
+        
         buildingPc.classList.remove("hidden");
 
         moneySpent += 5000;
@@ -465,6 +469,7 @@ componentsRom.forEach((componentRom) => {
         componentRom.setAttribute("disabled", "");
         componentRom.innerHTML = `Куплено!`;
         noComponents.classList.add("hidden");
+                
         buildingPc.classList.remove("hidden");
 
         moneySpent += 9000;
@@ -491,6 +496,8 @@ componentsPowerUnit.forEach((componentPowerUnit) => {
         componentPowerUnit.innerHTML = `Куплено!`;
         buildingPc.classList.remove("hidden");
         noComponents.classList.add("hidden");
+        
+        
         boughtComponentPowerUnit.classList.remove("hidden");
 
         moneySpent += 2000;
@@ -513,6 +520,8 @@ componentsPowerUnit.forEach((componentPowerUnit) => {
         componentPowerUnit.innerHTML = `Куплено!`;
         buildingPc.classList.remove("hidden");
         noComponents.classList.add("hidden");
+        
+        
         boughtComponentPowerUnit.classList.remove("hidden");
 
         moneySpent += 5000;
@@ -535,6 +544,8 @@ componentsPowerUnit.forEach((componentPowerUnit) => {
         componentPowerUnit.innerHTML = `Куплено!`;
         buildingPc.classList.remove("hidden");
         noComponents.classList.add("hidden");
+        
+        
         boughtComponentPowerUnit.classList.remove("hidden");
 
         moneySpent += 10000;
@@ -561,6 +572,8 @@ componentsGpu.forEach((componentGpu) => {
         componentGpu.innerHTML = `Куплено!`;
         buildingPc.classList.remove("hidden");
         noComponents.classList.add("hidden");
+        
+        
         boughtComponentGpu.classList.remove("hidden");
 
         moneySpent += 26000;
@@ -583,6 +596,8 @@ componentsGpu.forEach((componentGpu) => {
         componentGpu.innerHTML = `Куплено!`;
         buildingPc.classList.remove("hidden");
         noComponents.classList.add("hidden");
+        
+        
         boughtComponentGpu.classList.remove("hidden");
 
         moneySpent += 38000;
@@ -596,8 +611,8 @@ componentsGpu.forEach((componentGpu) => {
       }
     }
     if (componentGpu.classList.contains("pay-4060")) {
-      if (money > 66000) {
-        money = money - 66000;
+      if (money > 63000) {
+        money = money - 63000;
         userMoney.innerHTML = money;
         shopMoney.innerHTML = money;
 
@@ -605,9 +620,11 @@ componentsGpu.forEach((componentGpu) => {
         componentGpu.innerHTML = `Куплено!`;
         buildingPc.classList.remove("hidden");
         noComponents.classList.add("hidden");
+        
+        
         boughtComponentGpu.classList.remove("hidden");
 
-        moneySpent += 66000;
+        moneySpent += 63000;
 
         componentsGpu.forEach((componentGpu) => {
           componentGpu.setAttribute("disabled", "");
@@ -631,6 +648,8 @@ componentsRam.forEach((componentRam) => {
         componentRam.innerHTML = `Куплено!`;
         buildingPc.classList.remove("hidden");
         noComponents.classList.add("hidden");
+        
+        
         boughtComponentRam.classList.remove("hidden");
 
         moneySpent += 2000;
@@ -653,6 +672,8 @@ componentsRam.forEach((componentRam) => {
         componentRam.innerHTML = `Куплено!`;
         buildingPc.classList.remove("hidden");
         noComponents.classList.add("hidden");
+        
+        
         boughtComponentRam.classList.remove("hidden");
 
         moneySpent += 3000;
@@ -675,6 +696,8 @@ componentsRam.forEach((componentRam) => {
         componentRam.innerHTML = `Куплено!`;
         buildingPc.classList.remove("hidden");
         noComponents.classList.add("hidden");
+        
+        
         boughtComponentRam.classList.remove("hidden");
 
         moneySpent += 5000;
@@ -690,6 +713,23 @@ componentsRam.forEach((componentRam) => {
   });
 });
 
+startPcMobile.addEventListener("click", () => {
+  if (
+    componentCpuDown.contains(boughtComponentCpu) &&
+    componentGpuDown.contains(boughtComponentGpu) &&
+    componentRamDown.contains(boughtComponentRam) &&
+    componentPowerUnitDown.contains(boughtComponentPowerUnit)
+  ) {
+    if (
+      componentRomDown.contains(boughtComponentHdd) ||
+      componentRomDown.contains(boughtComponentSsd) ||
+      componentRomDown.contains(boughtComponentSamsung)
+    ) {
+      workPc.classList.add("hidden");
+      noWorkPc.classList.remove("hidden");
+    }
+  }
+});
 startPc.addEventListener("click", () => {
   if (
     componentCpuDown.contains(boughtComponentCpu) &&
