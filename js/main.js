@@ -763,6 +763,14 @@ reset.addEventListener("click", () => {
   boughtComponents.appendChild(boughtComponentGpu);
   boughtComponents.appendChild(boughtComponentPowerUnit);
 
+  boughtComponentCpu.classList.add("hidden");
+  boughtComponentGpu.classList.add("hidden");
+  boughtComponentRam.classList.add("hidden");
+  boughtComponentSsd.classList.add("hidden");
+  boughtComponentHdd.classList.add("hidden");
+  boughtComponentSamsung.classList.add("hidden");
+  boughtComponentPowerUnit.classList.add("hidden");
+
   componentsCpu.forEach((componentCpu) => {
     componentCpu.removeAttribute("disabled", "");
     componentCpu.innerHTML = `Купить`;
