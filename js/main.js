@@ -8,6 +8,7 @@ let userScore = 0;
 let userMoney = document.querySelector(".money__number");
 let money = 100000;
 userMoney.innerHTML = money;
+
 // VIDEO
 
 const pausedVideo = document.querySelector(".paused__video");
