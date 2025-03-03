@@ -294,6 +294,9 @@
   width: 50%;
   align-self: center;
 }
+.my__modal-final{
+  width: 80vw;
+}
 .final-level {
   position: relative;
   background-color: #00ff40;
