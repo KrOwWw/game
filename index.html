@@ -17,10 +17,6 @@
     <title>Document</title>
   </head>
   <body class="body">
-    <div class="money">
-      <div class="money__text">Ваш баланс:</div>
-      <span class="money__number"> </span>
-    </div>
     <section class="mini-game">
       <div class="mini-game__container">
         <img
@@ -327,7 +323,7 @@
                 </div>
               </div>
             </div>
-            <button class="check fourth__check">Проверить</button>
+            <button class="buttons fourth__check">Проверить</button>
             <div
               id="fourthResult"
               class="result"
@@ -422,8 +418,7 @@
                 </div>
               </div>
             </div>
-            <button class="check fifth__check">Проверить</button>
-            
+            <button class="buttons fifth__check">Проверить</button>
           </div>
         </div>
       </div>
@@ -462,7 +457,7 @@
                 class="quiz__input"
               />
               <br />
-              <button class="check sixth__check">Проверить</button>
+              <button class="buttons sixth__check">Проверить</button>
             </div>
             <div
               id="sixthResult"
@@ -562,9 +557,9 @@
               </div>
             </div>
             <div class="no-components">У вас пока нет комплетующих</div>
-            <button class="open-shop check">Магазин</button>
-            <button class="reset check">Отменить покупки</button>
-            <button class="start-pc pc check">Проверить</button>
+            <button class="open-shop buttons">Магазин</button>
+            <button class="reset buttons">Отменить покупки</button>
+            <button class="start-pc pc buttons">Проверить</button>
             <div class="shop hidden">
               <div class="shop__money-number"></div>
               <div class="shop__cpu block-components">
@@ -809,6 +804,98 @@
     </div>
 
     <!-- MODALS END -->
+
+    <!-- FORM BEGIN -->
+
+    <div
+      class="hystmodal"
+      id="testModal"
+      aria-hidden="true"
+    >
+      <div class="hystmodal__wrap">
+        <div
+          class="hystmodal__window my__modal-sixth"
+          role="dialog"
+          aria-modal="true"
+        >
+          <button
+            data-hystclose
+            class="hystmodal__close"
+          >
+            Закрыть
+          </button>
+          <form
+            action="#"
+            class="form"
+          >
+            <h1 class="form__title">Войдите, чтобы сохранить результат</h1>
+            <div class="text-field text-field_floating-3">
+              <input
+                class="text-field__input"
+                type="email"
+                id="email"
+                name="email"
+                placeholder=""
+              />
+              <label
+                class="text-field__label"
+                for="email"
+                >Email</label
+              >
+            </div>
+            <div class="text-field text-field_floating-3">
+              <input
+                class="text-field__input"
+                type="password"
+                id="password"
+                name="password"
+                placeholder=""
+              />
+              <label
+                class="text-field__label"
+                for="password"
+                >Password</label
+              >
+            </div>
+            <button
+              class="form__button"
+              type="submit"
+            >
+              Отправить
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- FORM END -->
+
+    <!-- ASIDE GUIDE BEGIN -->
+
+    <div class="guide__wrapper">
+      <button class="guide__close"></button>
+      <p class="guide-text">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti
+        asperiores eius harum fuga placeat, voluptas nobis, cum repudiandae
+        voluptatibus voluptate aperiam pariatur natus debitis architecto quod?
+        Nostrum, commodi, quam modi maiores natus inventore fugiat repellendus
+        recusandae corrupti quis ducimus nemo repudiandae sed aliquid minima
+        aliquam expedita cupiditate eaque illo saepe a cum veritatis dicta odit?
+        Dolore quidem officiis quasi. Velit quae non at iure consectetur, cumque
+        vel necessitatibus amet ducimus nostrum quis atque enim nihil qui.
+        Reiciendis velit quam blanditiis eius nobis. Fugiat asperiores, adipisci
+        ut corrupti dignissimos explicabo alias ducimus eligendi omnis quia
+        expedita vero, quod hic blanditiis cum.
+      </p>
+    </div>
+
+    <!-- ASIDE GUIDE END -->
+
+    <div class="money">
+      <div class="money__text">Ваш баланс:</div>
+      <span class="money__number"> </span>
+    </div>
+    <div class="guide-open">Справка</div>
 
     <script src="js/hystmodal.min.js"></script>
     <script
